@@ -1,3 +1,4 @@
+//Answer to the question https://leetcode.com/problems/longest-common-prefix/description/
 package Leetcode_problems;
 import java.util.Arrays;
 
