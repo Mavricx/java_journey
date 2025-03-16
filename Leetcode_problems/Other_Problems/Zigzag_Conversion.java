@@ -1,4 +1,3 @@
-package Leetcode_problems;
 
 public class Zigzag_Conversion {
 

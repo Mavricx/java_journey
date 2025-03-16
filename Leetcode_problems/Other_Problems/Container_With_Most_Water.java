@@ -1,6 +1,5 @@
 
 //Answer to the  question https://leetcode.com/problems/container-with-most-water/
-package Leetcode_problems;
 class Container_With_Most_Water {
     public static int maxArea(int[] height) {
         int maxArea = 0;

@@ -1,5 +1,4 @@
 //Answer to the question https://leetcode.com/problems/valid-parentheses/
-package Leetcode_problems;
 import java.util.Stack;
 
 class Valid_parenthesis {
