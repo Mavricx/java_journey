@@ -1,4 +1,3 @@
-package Java_Collection_Framework;
 
 import java.util.ArrayList;
 import java.util.Arrays;
