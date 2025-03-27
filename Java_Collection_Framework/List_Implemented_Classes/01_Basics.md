@@ -39,7 +39,7 @@ These interfaces are implemented by various classes. For example:
 
 ## Collection Hierarchy
 
-![Collection Hierarchy](./Diagrams/collection_hierarchy.png)
+![Collection Hierarchy](../Diagrams/collection_hierarchy.png)
 
 > **Note**: `Map` is a separate interface aside from this, which has classes like `HashMap` and `SortedMap` underneath its hierarchy.
 
