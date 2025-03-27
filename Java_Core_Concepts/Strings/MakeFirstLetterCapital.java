@@ -1,4 +1,4 @@
-package Strings;
+package Java_Core_Concepts.Strings;
 
 public class MakeFirstLetterCapital {
    public static String makeFirstLetterCapital(String str) {

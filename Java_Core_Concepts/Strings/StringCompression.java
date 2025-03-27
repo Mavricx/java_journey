@@ -1,4 +1,4 @@
-package Strings;
+package Java_Core_Concepts.Strings;
 
 public class StringCompression {
     public static String compress(String str) {// time complexity O(n)

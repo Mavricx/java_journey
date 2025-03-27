@@ -1,4 +1,4 @@
-package Strings;
+package Java_Core_Concepts.Strings;
 
 public class StringBuilderTest {
     public static void main(String[] args) {
