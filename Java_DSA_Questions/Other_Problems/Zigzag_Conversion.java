@@ -1,3 +1,4 @@
+package Java_DSA_Questions.Other_Problems;
 
 public class Zigzag_Conversion {
 

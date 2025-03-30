@@ -1,3 +1,4 @@
+package Java_DSA_Questions.Leetcode75;
 
 // Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
 
@@ -14,7 +15,7 @@
 // Input: nums = [0]
 // Output: [0]
 
-public class Move_zero_to_left {
+public class Move_zero_to_end {
     public void moveZeroes(int[] nums) {
         int slow=0;
         for (int fast=0;fast<nums.length;fast++){
@@ -28,7 +29,7 @@ public class Move_zero_to_left {
         
     }
     public static void main(String[] args) {
-        Move_zero_to_left obj = new Move_zero_to_left();
+        Move_zero_to_end obj = new Move_zero_to_end();
         int[] nums = {0,1,0,3,12};
         obj.moveZeroes(nums);
         for (int i : nums) {
