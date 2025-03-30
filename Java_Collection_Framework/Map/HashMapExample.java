@@ -1,4 +1,4 @@
-package Java_Collection_Framework.Map;
+package Map;
 
 import java.util.*;
 
@@ -43,7 +43,7 @@ public class HashMapExample {
         for(Map.Entry<Integer,String> entry:entrySet){
             entry.setValue(entry.getValue().toUpperCase());//making it to uppercase
             System.out.println("key:"+entry.getKey()+" value:"+entry.getValue());
-           
+            
         }
     }
 }
