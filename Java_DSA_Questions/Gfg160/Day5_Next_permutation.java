@@ -32,7 +32,7 @@ public class Day5_Next_permutation {
              }
          }
          
-         reverse(arr,index+1,n-1);//to get the next least larger number just reverse the subarray which is in descending order.
+         reverse(arr,index+1,n-1);//to get the next least larger number just reverse the sub array which is in descending order.
          }
         
     }
