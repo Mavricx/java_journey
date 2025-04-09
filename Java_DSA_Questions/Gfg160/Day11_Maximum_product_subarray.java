@@ -11,8 +11,8 @@ public class Day11_Maximum_product_subarray {
             if(pref==0) pref=1; //reset the subarray in case of occurance of zero
             if(suff==0) suff=1;//do the same for subarray starting from end
             
-            pref=pref*arr[i];//start multipling  from start
-            suff=suff*arr[len-1-i];//multipling  from end
+            pref=pref*arr[i];//start multiplying  from start
+            suff=suff*arr[len-1-i];//multiplying  from end
             
             result=Math.max(result,Math.max(pref,suff));
         }
