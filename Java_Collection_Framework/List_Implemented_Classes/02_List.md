@@ -115,30 +115,38 @@ fruits.remove("Apple"); // Removes the first occurrence of "Apple"
 - **Remove (Involves Shifting)**: O(n)
 - **Iteration**: O(n)
 
-
 ## Use Cases of List Implemented Classes
 
 ### 1. ArrayList
+
 - **Dynamic Resizing**: Suitable for scenarios where the size of the list is not fixed and frequent additions/removals occur at the end.
 - **Random Access**: Ideal for applications requiring fast access to elements using an index.
 - **Read-Heavy Operations**: Best for use cases where read operations are more frequent than write operations.
 
 ### 2. LinkedList
+
 - **Frequent Insertions/Deletions**: Preferred when there are frequent insertions or deletions in the middle of the list.
 - **Queue/Deque Implementations**: Useful for implementing data structures like queues and deques due to its efficient `addFirst()` and `addLast()` methods.
 - **Memory Efficiency**: Suitable when memory overhead due to resizing (as in `ArrayList`) is a concern.
 
 ### 3. Stack
+
 - **LIFO Operations**: Used in scenarios requiring Last-In-First-Out (LIFO) operations, such as undo functionality, expression evaluation, or backtracking algorithms.
 - **Thread Safety**: Provides thread-safe operations for stack-based use cases.
 
 ### 4. Vector
+
 - **Thread-Safe Operations**: Suitable for legacy applications requiring thread-safe operations on lists.
 - **Synchronized Access**: Useful in multi-threaded environments where synchronized access to the list is necessary.
 - **Legacy Code**: Often used in older Java applications for backward compatibility.
 
 ### 5. CopyOnWriteArrayList
+
 - **Read-Mostly Scenarios**: Ideal for use cases where read operations are significantly more frequent than write operations.
 - **Thread-Safe Iteration**: Ensures safe iteration in multi-threaded environments without requiring external synchronization.
 - **Immutable Snapshots**: Useful when a consistent snapshot of the list is needed during iteration, even if the list is being modified concurrently.
 - **Event Listeners**: Commonly used in scenarios like maintaining a list of event listeners where modifications are infrequent but iteration is frequent.
+
+```java
+Collection.sort(arraylist1,Collections.reverseOrder());
+```
