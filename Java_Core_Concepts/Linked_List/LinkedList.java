@@ -1,3 +1,5 @@
+package Java_Core_Concepts.Linked_List;
+
 class Node {
     int data;
     Node next;
@@ -14,8 +16,9 @@ class Node {
 }
 
 public class LinkedList {
+    Node head;
 
-    public void addInFront(int data, Node head) {
+    public void addInFront(int data) {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
@@ -29,7 +32,7 @@ public class LinkedList {
 
     }
 
-    public void deleteLast(Node head) {
+    public void deleteLast() {
         Node curNode = head;
         if (curNode == null) {
             return;
@@ -44,7 +47,15 @@ public class LinkedList {
         curNode.next = null;
     }
 
-    public void deleteByValue(int data, Node head) {
+    public void deleteFirst() {
+        if (head != null) {
+            head = head.next;
+            return;
+        }
+
+    }
+
+    public void deleteByValue(int data) {
         if (head == null) {
             return;
         }
@@ -64,7 +75,51 @@ public class LinkedList {
 
     }
 
-    public void display(Node head) {
+    public void deleteByIndex(int index) {
+        Node temp = head;
+        Node curNode = head;
+        int curIdx = 0;
+        while (curNode != null) {
+            curIdx++;
+            if (curIdx == index) {
+                temp.next = curNode.next;
+                break;
+            }
+            temp = curNode;
+            curNode = curNode.next;
+        }
+
+    }
+
+    public void reverseLinkedList() {
+        Node prev = null;
+        Node current = head;
+        Node next = null;
+        while (current != null) {
+            next = current.next;// store the next node
+            current.next = prev;// reverse the current node pointer
+            prev = current;// move prev to step forward
+            current = next;// move current one step forward
+        }
+        head = prev;// set new head
+    }
+
+    public void insertAt(int index, int data) {
+        Node curNode = head;
+        Node newNode = new Node(data);
+        int idx = 1;
+        while (curNode != null) {
+            idx += 1;
+            if (idx == index) {
+                Node temp = curNode.next;
+                curNode.next = newNode;
+                newNode.next = temp;
+            }
+            curNode = curNode.next;
+        }
+    }
+
+    public void display() {
         Node currentNode = head;
         while (currentNode != null) {
             System.out.print(currentNode.data + "=>");
@@ -75,18 +130,17 @@ public class LinkedList {
     }
 
     public static void main(String[] args) {
-        Node head = new Node(1, new Node(2, new Node(3, null)));
         LinkedList list = new LinkedList();
-        list.addInFront(4, head);
-        list.addInFront(5, head);
-        list.addInFront(6, head);
-        list.addInFront(7, head);
+        list.head = new Node(1,
+                new Node(2, new Node(3, new Node(4, new Node(5, new Node(6, new Node(7, new Node(8))))))));
 
-        list.display(head);
-        list.deleteByValue(2, head);
-        list.deleteLast(head);
-        list.deleteByValue(5, head);
-        list.display(head);
-
+        list.display();
+        // list.deleteByValue(2);
+        // list.deleteLast();
+        // list.deleteFirst();
+        // list.deleteByIndex(3);
+        // list.reverseLinkedList();
+        list.insertAt(3, 78);
+        list.display();
     }
 }
