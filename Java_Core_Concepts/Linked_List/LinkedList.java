@@ -119,6 +119,21 @@ public class LinkedList {
         }
     }
 
+    public void deleteAt(int idx) {
+        Node curNode = head;
+        int curIdx = 1;
+        Node temp = head;
+        while (curNode != null) {
+            curIdx++;
+            if (curIdx == idx) {
+                temp.next = curNode.next;
+            }
+            temp = curNode;
+            curNode = curNode.next;
+
+        }
+    }
+
     public void display() {
         Node currentNode = head;
         while (currentNode != null) {
@@ -140,7 +155,8 @@ public class LinkedList {
         // list.deleteFirst();
         // list.deleteByIndex(3);
         // list.reverseLinkedList();
-        list.insertAt(3, 78);
+        // list.insertAt(3, 78);
+        list.deleteAt(3);
         list.display();
     }
 }
