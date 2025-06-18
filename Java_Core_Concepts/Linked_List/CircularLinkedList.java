@@ -50,6 +50,7 @@ public class CircularLinkedList {
         System.out.println("head");
 
     }
+    
 
     public static void main(String[] args) {
         CircularLinkedList list = new CircularLinkedList();

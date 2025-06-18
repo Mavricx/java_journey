@@ -143,20 +143,77 @@ public class LinkedList {
         }
         System.out.print("null\n");
     }
+    // find out if the linked list is palindrome or not
+    // method-1 we can store all the value in an array ,arraylist and check its
+    // palindrome ness with O(n) time complexity
+    // method-2 :
+    // step-1:find middle node
+    // step-2:reverse the second half
+    // step-3:check if first half==second half
+    // Time complexity:O(1)
+    // slow-fast concept:- take two pointer slow one(turtle) jumps one node at a
+    // time (+1) while fast one(hare) jumps two node at a time(+2).
+    // after half iteration the fast one will be at last and the slow one will at
+    // middle of the linked list
+
+    public Node findMid() {
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+    public boolean isPalindrome() {
+        if (head == null || head.next == null) {
+            return true;
+        }
+
+        Node midNode = findMid();
+
+        Node prev = null;
+        Node curr = midNode;
+        Node next;
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        Node right = prev;// right half head
+        Node left = head;
+
+        while (right != null) {
+            if (left.data != right.data) {
+                return false;
+            }
+            left = left.next;
+            right = right.next;
+        }
+        return true;
+    }
 
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
+        LinkedList list2 = new LinkedList();
         list.head = new Node(1,
                 new Node(2, new Node(3, new Node(4, new Node(5, new Node(6, new Node(7, new Node(8))))))));
-
-        list.display();
+        list2.head = new Node(1,
+                new Node(2, new Node(3, new Node(4, new Node(3, new Node(2, new Node(1, null)))))));
+        // list.display();
         // list.deleteByValue(2);
         // list.deleteLast();
         // list.deleteFirst();
         // list.deleteByIndex(3);
         // list.reverseLinkedList();
         // list.insertAt(3, 78);
-        list.deleteAt(3);
-        list.display();
+        // list.deleteAt(3);
+        // list.display();
+        list2.display();
+        System.out.println(list.isPalindrome());
+        System.out.println(list2.isPalindrome());
+
     }
 }
