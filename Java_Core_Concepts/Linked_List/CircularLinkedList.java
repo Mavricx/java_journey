@@ -90,16 +90,18 @@ public class CircularLinkedList {
                 break;
             }
         }
-        // find meeting point
-        slow = head;
-        Node prev = null;
-        while (slow != fast) {
-            prev = fast;
-            slow = slow.next;
-            fast = fast.next;
+        if (loopFound) {
+            // find meeting point
+            slow = head;
+            Node prev = null;
+            while (slow != fast) {
+                prev = fast;
+                slow = slow.next;
+                fast = fast.next;
+            }
+            // remove the cycle
+            prev.next = null;
         }
-        // remove the cycle
-        prev.next = null;
 
     }
 
