@@ -248,6 +248,41 @@ public class LinkedList {
         return merge(newLeft, newRight);
     }
 
+    public void makeZigzag(Node head) {
+        // similar to palindrome
+        // 1.find mid node
+        Node mid = findMid();
+
+        // 2.reverse second half
+        Node curr = mid.next;
+        mid.next = null;
+        Node prev = null;
+        Node next;
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        Node left = head;
+        Node right = prev;
+        Node nextL, nextR;
+
+        // 3.alternate merging.one from 1st half then 2nd from 2nd half, third from 1st
+        // half. etc.
+        while (left != null && right != null) {
+            nextL = left.next;// store next node of left
+            left.next = right;// link left to right
+            nextR = right.next;// store next node of right
+            right.next = nextL;// link right to next left
+
+            left = nextL;// move left to next left node
+            right = nextR;// move right to next right node
+        }
+
+    }
+
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
         LinkedList list2 = new LinkedList();
@@ -270,7 +305,8 @@ public class LinkedList {
         // System.out.println(list.isPalindrome());
         // System.out.println(list2.isPalindrome());
         list3.head = list3.mergeSort(list3.head);
-        list3.display();
+        list2.makeZigzag(list2.head);
+        list2.display();
 
     }
 }
