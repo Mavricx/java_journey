@@ -195,11 +195,66 @@ public class LinkedList {
         return true;
     }
 
+    private Node getMid(Node head) {
+        Node slow = head;
+        Node fast = head.next;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+    private Node merge(Node head1, Node head2) {
+        Node dummyHead = new Node(-1);
+        Node temp = dummyHead;
+        while (head1 != null && head2 != null) {
+            if (head1.data <= head2.data) {
+                temp.next = head1;
+                head1 = head1.next;
+                temp = temp.next;
+            } else {
+                temp.next = head2;
+                head2 = head2.next;
+                temp = temp.next;
+            }
+        }
+
+        while (head1 != null) {
+            temp.next = head1;
+            head1 = head1.next;
+            temp = temp.next;
+        }
+        while (head2 != null) {
+            temp.next = head2;
+            head2 = head2.next;
+            temp = temp.next;
+        }
+        return dummyHead.next;
+    }
+
+    public Node mergeSort(Node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        // find the middle of the linked list
+        Node mid = getMid(head);
+        // then divide the linked list into two linked list
+        Node rightHead = mid.next;
+        mid.next = null;
+        Node newLeft = mergeSort(head);
+        Node newRight = mergeSort(rightHead);
+
+        return merge(newLeft, newRight);
+    }
+
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
         LinkedList list2 = new LinkedList();
-        list.head = new Node(1,
-                new Node(2, new Node(3, new Node(4, new Node(5, new Node(6, new Node(7, new Node(8))))))));
+        LinkedList list3 = new LinkedList();
+        list.head = new Node(8,
+                new Node(69, new Node(3, new Node(47, new Node(61, new Node(57, new Node(25, new Node(65))))))));
+        list3.head = new Node(94, new Node(30, new Node(83, new Node(29, new Node(14, new Node(83))))));
         list2.head = new Node(1,
                 new Node(2, new Node(3, new Node(4, new Node(3, new Node(2, new Node(1, null)))))));
         // list.display();
@@ -211,9 +266,11 @@ public class LinkedList {
         // list.insertAt(3, 78);
         // list.deleteAt(3);
         // list.display();
-        list2.display();
-        System.out.println(list.isPalindrome());
-        System.out.println(list2.isPalindrome());
+        // list2.display();
+        // System.out.println(list.isPalindrome());
+        // System.out.println(list2.isPalindrome());
+        list3.head = list3.mergeSort(list3.head);
+        list3.display();
 
     }
 }
