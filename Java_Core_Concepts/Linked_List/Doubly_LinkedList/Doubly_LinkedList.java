@@ -95,16 +95,31 @@ public class Doubly_LinkedList {
         }
     }
 
+    public void reverseList() {
+        Node current = head;
+        Node temp = null;
+        while (current != null) {
+            temp = current.prev;// Store the previous node
+            current.prev = current.next;// Reverse the next pointer
+            current.next = temp;// Reverse the previous pointer
+            current = current.prev;// Move to the next node (which is now previous)
+        }
+        if (temp != null) { // If temp is not null, it means we have a new head
+            head = temp.prev;
+        }
+    }
+
     public static void main(String[] args) {
         Doubly_LinkedList list = new Doubly_LinkedList();
         list.addLast(1);
         list.addLast(2);
         list.addLast(3);
         list.addFirst(0);
-        list.removeFirst();
-        list.removeLast();
+        // list.removeFirst();
+        // list.removeLast();
         list.display();
-        System.out.println(list.tail.data);
+        list.reverseList();
+        list.display();
     }
 
 }
