@@ -1,5 +1,7 @@
 package Java_Core_Concepts.Linked_List;
 
+import Java_Core_Concepts.Linked_List.Doubly_LinkedList.Node;
+
 class Node {
     int data;
     Node next;
