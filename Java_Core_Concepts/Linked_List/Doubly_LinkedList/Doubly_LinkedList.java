@@ -20,7 +20,7 @@ public class Doubly_LinkedList {
     public void display() {
         Node temp = head;
         while (temp != null) {
-            System.out.print(temp.data + " => ");
+            System.out.print(temp.data + " <=> ");
             temp = temp.next;
         }
         System.out.println("Null");
@@ -96,17 +96,31 @@ public class Doubly_LinkedList {
     }
 
     public void reverseList() {
-        Node current = head;
-        Node temp = null;
-        while (current != null) {
-            temp = current.prev;// Store the previous node
-            current.prev = current.next;// Reverse the next pointer
-            current.next = temp;// Reverse the previous pointer
-            current = current.prev;// Move to the next node (which is now previous)
+        // Node current = head;
+        // Node temp = null;
+        // while (current != null) {
+        // temp = current.prev;// Store the previous node
+        // current.prev = current.next;// Reverse the next pointer
+        // current.next = temp;// Reverse the previous pointer
+        // current = current.prev;// Move to the next node (which is now previous)
+        // }
+        // if (temp != null) { // If temp is not null, it means we have a new head
+        // head = temp.prev;
+        // }
+
+        Node currNode = head;
+        Node prevNode = null;
+        Node nextNode;
+
+        while (currNode != null) {
+            nextNode = currNode.next;// store the next node
+            currNode.next = prevNode;// set the next of the current node to the previous
+            currNode.prev = nextNode;// set the prev of the current node to the next
+
+            prevNode = currNode;// now set value of prevNode as currNode
+            currNode = nextNode;// move the currNode to next.
         }
-        if (temp != null) { // If temp is not null, it means we have a new head
-            head = temp.prev;
-        }
+        head = prevNode;
     }
 
     public static void main(String[] args) {
