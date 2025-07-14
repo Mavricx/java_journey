@@ -1,4 +1,4 @@
-package Java_Core_Concepts.Linked_List.Doubly_LinkedList;
+package Java_Core_Concepts.Linked_List;
 
 class Node {
     int data;

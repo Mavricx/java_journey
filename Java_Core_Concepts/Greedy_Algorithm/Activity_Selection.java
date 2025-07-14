@@ -13,18 +13,41 @@ public class Activity_Selection {
     public static void main(String[] args) {
         int start[] = { 1, 3, 0, 5, 8, 5 };
         int end[] = { 2, 4, 6, 7, 9, 9 };
-        //sorting the end
-        int activities[][]=new int[start.length][3];
-        for (int i=0;i<start.length;i++){
-            activities[i][0]=i;
-            activities[i][1]=start[i];
-            activities[i][2]=end[i];
+
+        //the below code is for the case when activities are not sorted according to end time
+        
+        // int maxAct=0;
+        // ArrayList <Integer> ans=new ArrayList<>();
+        // maxAct=1;
+        // ans.add(0);
+        // int lastEnd=end[0];
+        // for(int i=1;i<end.length;i++){
+        // if(start[i]>=lastEnd){
+        // maxAct++;
+        // ans.add(i);
+        // lastEnd=end[i];
+        // }
+        // }
+        // System.out.println("Max Activities: " + maxAct );
+
+        // for(int i=0;i<ans.size();i++){
+        // System.out.print("A"+ans.get(i)+" ");
+        // }
+
+        // System.out.println();
+
+        //storing the activities in a 2D array where each row contains the index, start time, and end time
+        int activities[][] = new int[start.length][3];
+        for (int i = 0; i < start.length; i++) {
+            activities[i][0] = i;
+            activities[i][1] = start[i];
+            activities[i][2] = end[i];
         }
 
-        //lambda function to sort the activities on the basis of end time/column no 2
-        Arrays.sort(activities,Comparator.comparingDouble(o->o[2]));
+       //lambda function to sort the activities on the basis of end time/column no 2
 
-        int maxAct=0;
+        Arrays.sort(activities, Comparator.comparingDouble(o -> o[2]));
+        int maxAct = 0;
         ArrayList<Integer> ans = new ArrayList<>();
         maxAct = 1;
         ans.add(activities[0][0]);
@@ -39,9 +62,8 @@ public class Activity_Selection {
         System.out.println("Max Activities: " + maxAct);
         System.out.print("Activities: ");
         for (int i = 0; i < ans.size(); i++) {
-            System.out.print("A"+ans.get(i) + " ");
+            System.out.print("A" + ans.get(i) + " ");
         }
-
     }
 
 }

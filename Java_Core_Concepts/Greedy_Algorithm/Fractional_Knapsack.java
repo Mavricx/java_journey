@@ -27,7 +27,7 @@ public class Fractional_Knapsack {
 
         int capacity = w;
         int finalValue = 0;
-        for (int i = ratio.length - 1; i >=0; i--) {
+        for (int i = ratio.length - 1; i >= 0; i--) {
             int idx = (int) ratio[i][0];
             if (capacity >= weight[idx]) {
                 capacity -= weight[idx];
@@ -36,9 +36,7 @@ public class Fractional_Knapsack {
                 finalValue += capacity * ratio[i][1];
                 capacity = 0;
             }
-
         }
-
         System.out.println(finalValue);
     }
 }
