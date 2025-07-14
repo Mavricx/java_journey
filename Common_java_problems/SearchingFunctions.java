@@ -1,4 +1,5 @@
 package Common_java_problems;
+
 public class SearchingFunctions {
     public static int recBinarySearch(int[] arr, int key, int low, int high) {
         int middle = low + (high - low) / 2;
