@@ -5,9 +5,9 @@ import java.util.*;
 //You are given n activities with their start and end times. Select the maximum number of activities
 // that can be performed by a single person, assuming that a person can only work on a single
 // activity at a time. Activities are sorted according to end time.
-// start [10, 12, 201
+// start [10, 12, 20]
 // ans 2 (AO & A2)
-// end [20, 25, 301
+// end [20, 25, 30]
 public class Activity_Selection {
 
     public static void main(String[] args) {
