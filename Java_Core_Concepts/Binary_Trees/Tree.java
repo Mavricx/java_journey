@@ -3,7 +3,7 @@ package Java_Core_Concepts.Binary_Trees;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Build_Tree_PreOrder {
+public class Tree {
     static class Node {
         int data;
         Node left;
