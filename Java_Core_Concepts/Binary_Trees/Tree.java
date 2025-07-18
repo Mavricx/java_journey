@@ -1,5 +1,6 @@
 package Java_Core_Concepts.Binary_Trees;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -17,9 +18,9 @@ public class Tree {
     }
 
     static class BinaryTree {
-        static int idx = -1;
+        int idx = -1;
 
-        public static Node buildTree(int nodes[]) {
+        public Node buildTree(int nodes[]) {
             idx++;
             if (nodes[idx] == -1) {
                 return null;
@@ -151,19 +152,128 @@ public class Tree {
             return new Info(diam, height);
 
         }
+
+        public static boolean isIdentical(Node node, Node subRoot) {
+            if (node == null && subRoot == null) {
+                return true;
+            } else if (node == null || subRoot == null || node.data != subRoot.data) {
+                return false;
+            }
+            if (!isIdentical(node.left, subRoot.left)) {
+                return false;
+            }
+            if (!isIdentical(node.right, subRoot.right)) {
+                return false;
+            }
+
+            return true;
+        }
+
+        public static boolean isSubtree(Node root, Node subRoot) {
+            // step-1: find sub root in the main tree.
+            // step-2: recursively check the subtree is identical to each other or not.
+
+            if (root == null) {
+                return false;
+            }
+            if (root.data == subRoot.data) {
+                if (isIdentical(root, subRoot)) {
+                    return true;
+                }
+            }
+            boolean leftAns = isSubtree(root.left, subRoot);
+            boolean rightAns = isSubtree(root.right, subRoot);
+
+            return leftAns || rightAns;
+        }
+
+        static class NodeInfo {
+            Node node;
+            int hd;
+
+            NodeInfo(Node node, int hd) {
+                this.node = node;
+                this.hd = hd;
+            }
+        }
+
+        public static void topView(Node root) {
+            // level order traversal is used to find the top view of the binary tree.
+            Queue<NodeInfo> q = new LinkedList<>();
+            HashMap<Integer, Node> map = new HashMap<>();
+            int min = 0, max = 0;
+            q.add(new NodeInfo(root, 0));
+            q.add((null));
+
+            while (!q.isEmpty()) {
+                NodeInfo curNode = q.remove();
+                if (curNode == null) {
+                    if (q.isEmpty()) {
+                        break;
+                    } else {
+                        q.add(null);
+                    }
+                } else {
+                    if (!map.containsKey(curNode.hd)) {
+                        map.put(curNode.hd, curNode.node);
+
+                    }
+
+                    if (curNode.node.left != null) {
+                        q.add(new NodeInfo(curNode.node.left, curNode.hd - 1));
+                        min = Math.min(min, curNode.hd - 1);
+                    }
+                    if (curNode.node.right != null) {
+                        q.add(new NodeInfo(curNode.node.right, curNode.hd + 1));
+                        max = Math.max(max, curNode.hd + 1);
+                    }
+                }
+            }
+
+            for (int i = min; i <= max; i++) {
+                if (map.containsKey(i)) {
+                    System.out.print(map.get(i).data + " ");
+                }
+            }
+            System.out.println();
+        }
+
     }
 
     public static void main(String[] args) {
-        int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
-        BinaryTree tree = new BinaryTree();
-        Node root = tree.buildTree(nodes);
-        // System.out.println(root.data);
-        tree.levelOrder(root);
-        System.out.println(tree.height(root));
-        System.out.println(tree.nodeCount(root));
-        System.out.println(tree.sumOfNode(root));
-        System.out.println(tree.diameter(root));
-        System.out.println(tree.diameter2(root).diam);
+        // int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
+        // BinaryTree tree = new BinaryTree();
+        // Node root = tree.buildTree(nodes);
+        // // System.out.println(root.data);
+        // tree.levelOrder(root);
+        // System.out.println(tree.height(root));
+        // System.out.println(tree.nodeCount(root));
+        // System.out.println(tree.sumOfNode(root));
+        // System.out.println(tree.diameter(root));
+        // System.out.println(tree.diameter2(root).diam);
+
+        int nodes1[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, 6, -1, -1, 7, -1, -1 };
+        BinaryTree tree1 = new BinaryTree();
+        Node root1 = tree1.buildTree(nodes1);
+        /*
+         * 1
+         * / \
+         * 2 3
+         * / \/ \
+         * 4 5 6 7
+         */
+        int nodes2[] = { 2, 4, -1, -1, 5, -1, -1 };
+        BinaryTree tree2 = new BinaryTree();
+        Node root2 = tree2.buildTree(nodes2);
+        /*
+         * 2
+         * / \
+         * 4 5
+         * 
+         */
+
+        // System.out.println(tree1.isSubtree(root1, root2));
+        tree1.topView(root1);
 
     }
 }
