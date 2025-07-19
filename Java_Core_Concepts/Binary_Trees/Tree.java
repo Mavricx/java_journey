@@ -1,5 +1,6 @@
 package Java_Core_Concepts.Binary_Trees;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -238,6 +239,58 @@ public class Tree {
             System.out.println();
         }
 
+        public static void kthLevel(Node root, int level, int k) {
+            if (root == null) {
+                return;
+            }
+            if (level == k) {
+                System.out.print(root.data);
+                return;
+            }
+            kthLevel(root.left, level + 1, k);
+            kthLevel(root.right, level + 1, k);
+        }
+
+        public static boolean getPath(Node root, int n, ArrayList<Node> path) {
+            if (root == null) {
+                return false;
+            }
+            path.add(root);
+
+            if (root.data == n) {
+                return true;
+            }
+            boolean foundInLeft = getPath(root.left, n, path);
+            boolean foundInRight = getPath(root.right, n, path);
+
+            if (foundInLeft || foundInRight) {
+                return true;
+            }
+
+            path.remove(path.size() - 1);
+            return false;
+        }
+
+        public static Node lowestCommonAncestor(Node root, int n1, int n2) {
+            ArrayList<Node> path1 = new ArrayList<>();
+            ArrayList<Node> path2 = new ArrayList<>();
+
+            getPath(root, n1, path1);
+            getPath(root, n2, path2);
+
+            int i = 0;
+            while (i < path1.size() && i < path2.size()) {
+                if (path1.get(i).data != path2.get(i).data) {
+                    break;
+                }
+                i++;
+            }
+
+            int lca = i - 1;
+
+            return path1.get(lca);
+        }
+
     }
 
     public static void main(String[] args) {
@@ -273,7 +326,9 @@ public class Tree {
          */
 
         // System.out.println(tree1.isSubtree(root1, root2));
-        tree1.topView(root1);
+        // tree1.topView(root1);
+        // tree1.kthLevel(root1, 1, 3);
+        System.out.println(tree1.lowestCommonAncestor(root1, 4, 5).data);
 
     }
 }
