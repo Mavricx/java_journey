@@ -291,6 +291,75 @@ public class Tree {
             return path1.get(lca);
         }
 
+        public static Node lca2(Node root, int n1, int n2) {
+            if (root == null || root.data == n1 || root.data == n2) {
+                return root;
+            }
+            Node leftLca = lca2(root.left, n1, n2);
+            Node rightLca = lca2(root.right, n1, n2);
+
+            if (rightLca == null) {
+                return leftLca;
+            }
+            if (leftLca == null) {
+                return rightLca;
+            }
+
+            return root;
+
+        }
+
+        public static int lcaDist(Node root, int n) {
+            if (root == null) {
+                return -1;
+            }
+            if (root.data == n) {
+                return 0;
+            }
+            int leftDist = lcaDist(root.left, n);
+            int rightDist = lcaDist(root.right, n);
+
+            if (leftDist == -1 && rightDist == -1) {
+                return -1;
+            } else if (leftDist == -1) {
+                return rightDist + 1;
+            } else {
+                return leftDist + 1;
+            }
+
+        }
+
+        public static int min_Distance(Node root, int n1, int n2) {
+            // minimum distance between two nodes :distance from lca from n1+distance from
+            // lca to n2
+            Node lca = lca2(root, n1, n2);
+            int dist1 = lcaDist(lca, n1);
+            int dist2 = lcaDist(lca, n2);
+
+            return dist1 + dist2;
+        }
+
+        // kth ancestor of a node in a binary tree.
+        public static int kthAncestor(Node root, int n, int k) {
+            if (root == null) {
+                return -1;
+            }
+            if (root.data == n) {
+                return 0;
+            }
+
+            int leftDist = kthAncestor(root.left, n, k);
+            int rightDist = kthAncestor(root.right, n, k);
+
+            if (leftDist == -1 && rightDist == -1) {
+                return -1;
+            }
+            int max = Math.max(leftDist, rightDist);
+            if (max + 1 == k) {
+                System.out.println(root.data);
+            }
+            return max + 1;
+        }
     }
 
     public static void main(String[] args) {
@@ -328,7 +397,9 @@ public class Tree {
         // System.out.println(tree1.isSubtree(root1, root2));
         // tree1.topView(root1);
         // tree1.kthLevel(root1, 1, 3);
-        System.out.println(tree1.lowestCommonAncestor(root1, 4, 5).data);
-
+        // System.out.println(tree1.lowestCommonAncestor(root1, 4, 5).data);
+        // System.out.println(tree1.lca2(root1, 4, 7).data);
+        // System.out.println(tree1.min_Distance(root1, 4, 7));
+        tree1.kthAncestor(root1, 5, 2);
     }
 }
