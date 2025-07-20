@@ -360,6 +360,22 @@ public class Tree {
             }
             return max + 1;
         }
+
+        // transform to a sum tree,
+        public static int transformToSumTree(Node root) {
+            if (root == null) {
+                return 0;
+            }
+            int leftChild = transformToSumTree(root.left);
+            int rightChild = transformToSumTree(root.right);
+
+            int rootData = root.data;
+            root.data = ((root.left != null) ? root.left.data : 0) + leftChild
+                    + ((root.right != null) ? root.right.data : 0) + rightChild;
+            return rootData;
+
+        }
+
     }
 
     public static void main(String[] args) {
@@ -400,6 +416,9 @@ public class Tree {
         // System.out.println(tree1.lowestCommonAncestor(root1, 4, 5).data);
         // System.out.println(tree1.lca2(root1, 4, 7).data);
         // System.out.println(tree1.min_Distance(root1, 4, 7));
-        tree1.kthAncestor(root1, 5, 2);
+        // tree1.kthAncestor(root1, 5, 2);
+        tree1.preOrder(root1);
+        System.out.println(tree1.transformToSumTree(root1));
+        tree1.preOrder(root1);
     }
 }
