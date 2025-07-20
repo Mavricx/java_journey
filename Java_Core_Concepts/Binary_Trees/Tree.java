@@ -3,6 +3,7 @@ package Java_Core_Concepts.Binary_Trees;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class Tree {
@@ -271,6 +272,7 @@ public class Tree {
             return false;
         }
 
+        // lca first approach
         public static Node lowestCommonAncestor(Node root, int n1, int n2) {
             ArrayList<Node> path1 = new ArrayList<>();
             ArrayList<Node> path2 = new ArrayList<>();
@@ -291,6 +293,7 @@ public class Tree {
             return path1.get(lca);
         }
 
+        // lca second and optimal approach.
         public static Node lca2(Node root, int n1, int n2) {
             if (root == null || root.data == n1 || root.data == n2) {
                 return root;
@@ -376,6 +379,40 @@ public class Tree {
 
         }
 
+        // print all path in the binary tree.
+        public static void printAllPath(Node root, ArrayList<Integer> path) {
+            if (root == null) {
+                return;
+            }
+            path.add(root.data);
+            if (root.left == null && root.right == null) {
+                System.out.println(path);
+            } else {
+                printAllPath(root.left, path);
+                printAllPath(root.right, path);
+            }
+            path.remove(path.size() - 1);
+        }
+
+        // leetcode style code print all path.
+        List<String> ans = new ArrayList<>();
+
+        public List<String> binaryTreePaths(Node root) {
+            path(root, "");
+            return ans;
+        }
+
+        public void path(Node root, String str) {
+            if (root.left == null && root.right == null) {
+                ans.add(str + root.data);
+            }
+            if (root.left != null) {
+                path(root.left, str + root.data + "->");
+            }
+            if (root.right != null) {
+                path(root.right, str + root.data + "->");
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -417,8 +454,9 @@ public class Tree {
         // System.out.println(tree1.lca2(root1, 4, 7).data);
         // System.out.println(tree1.min_Distance(root1, 4, 7));
         // tree1.kthAncestor(root1, 5, 2);
+        // tree1.preOrder(root1);
+        // System.out.println(tree1.transformToSumTree(root1));
         tree1.preOrder(root1);
-        System.out.println(tree1.transformToSumTree(root1));
-        tree1.preOrder(root1);
+        tree1.printAllPath(root1, new ArrayList<>());
     }
 }
