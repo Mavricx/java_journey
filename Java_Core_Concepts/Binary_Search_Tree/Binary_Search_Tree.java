@@ -1,5 +1,9 @@
 package Java_Core_Concepts.Binary_Search_Tree;
 
+import java.util.ArrayList;
+
+import javax.swing.border.LineBorder;
+
 public class Binary_Search_Tree {
     static class Node {
         int data;
@@ -42,6 +46,15 @@ public class Binary_Search_Tree {
             inOrder(root.left);
             System.out.print(root.data + "  ");
             inOrder(root.right);
+        }
+
+        public static void preOrder(Node root) {
+            if (root == null) {
+                return;
+            }
+            System.out.print(root.data + " ");
+            preOrder(root.left);
+            preOrder(root.right);
         }
 
         public static boolean search(Node root, int key) {
@@ -100,16 +113,122 @@ public class Binary_Search_Tree {
             return root;
         }
 
+        public void printInRange(Node root, int k1, int k2) {
+
+            if (root == null) {
+                return;
+            }
+
+            if (root.data >= k1 && root.data <= k2) {
+                printInRange(root.left, k1, k2);
+                System.out.print(root.data + " ");
+                printInRange(root.right, k1, k2);
+            }
+            if (root.data > k2) {
+                printInRange(root.right, k1, k2);
+            } else {
+                printInRange(root.left, k1, k2);
+            }
+        }
+
+        public void rootToLeafPath(Node root, ArrayList<Integer> path) {
+            if (root == null) {
+                return;
+            }
+            path.add(root.data);
+            if (root.left == null && root.right == null) {
+                System.out.println(path);
+            } else {
+                rootToLeafPath(root.left, path);
+                rootToLeafPath(root.right, path);
+            }
+            path.remove(path.size() - 1);
+        }
+
+        public boolean isValidBST(Node root, Node min, Node max) {
+            // approach-1
+            // get inOrder traversal....if sorted then valid if not not valid.
+
+            // approach-2
+            // check max value of in left subTree < root node
+            // min value in right subtree > root node
+            if (root == null) {
+                return true;
+            }
+
+            if (min != null && root.data <= min.data) {
+                return false;
+            }
+            if (max != null && root.data >= max.data) {
+                return false;
+            }
+            return isValidBST(root.left, min, root)
+                    && isValidBST(root.right, root, max);
+        }
+
+        public Node mirror_a_BST(Node root) {// in the same binary search tree.
+            if (root == null)
+                return null;
+            Node leftSubTree = mirror_a_BST(root.left);
+            Node rightSubTree = mirror_a_BST(root.right);
+            root.left = rightSubTree;
+            root.right = leftSubTree;
+            return root;
+        }
+
+        public Node sortedArrayToBalancedBST(int[] arr, int start, int end) {
+            if (start > end) {
+                return null;
+            }
+            int mid = (start + end) / 2;
+            Node root = new Node(arr[mid]);
+            root.left = sortedArrayToBalancedBST(arr, start, mid - 1);
+            root.right = sortedArrayToBalancedBST(arr, mid + 1, end);
+            return root;
+        }
+
+        public Node sortedArrayListToBalancedBST(ArrayList<Integer> arr, int start, int end) {
+            if (start > end)
+                return null;
+            int mid = (start + end) / 2;
+            Node root = new Node(arr.get(mid));
+            root.left = sortedArrayListToBalancedBST(arr, start, mid - 1);
+            root.right = sortedArrayListToBalancedBST(arr, mid + 1, end);
+            return root;
+        }
+
+        public static void getInOrder(Node root, ArrayList<Integer> ans) {
+            if (root == null)
+                return;
+            getInOrder(root.left, ans);
+            ans.add(root.data);
+            getInOrder(root.right, ans);
+        }
+
+        public Node bstToBalancedBST(Node root) {
+            // get the inOrder sequence.
+            ArrayList<Integer> sorted = new ArrayList<>();
+            getInOrder(root, sorted);
+            // get the bst from inOrder sequence
+            return sortedArrayListToBalancedBST(sorted, 0, sorted.size() - 1);
+        }
     }
 
     public static void main(String[] args) {
         BST bst = new BST();
-        int[] values = { 8, 5, 3, 1, 4, 6, 10, 11, 14 };
+        // int[] values = { 8, 5, 3, 1, 4, 6, 10, 11, 14 };
+        int arr[] = { 3, 5, 6, 8, 10, 11, 12 };
         Node root = null;
-        root = bst.buildBST(root, values);
+        // root = bst.buildBST(root, values);
         // bst.inOrder(root);
         // System.out.println(bst.search(root, 1));
-        root = bst.deleteNode(root, 5);
-        bst.inOrder(root);
+        // root = bst.deleteNode(root, 5);
+        // bst.inOrder(root);
+        // bst.printInRange(root, 5, 12);
+        // System.out.println(bst.isValidBST(root, null, null));
+        // root = bst.mirror_a_BST(root);
+        // bst.inOrder(root);
+        root = bst.sortedArrayToBalancedBST(arr, 0, arr.length - 1);
+        bst.preOrder(root);
     }
 }
