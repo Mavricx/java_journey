@@ -211,6 +211,45 @@ public class Binary_Search_Tree {
             getInOrder(root, sorted);
             // get the bst from inOrder sequence
             return sortedArrayListToBalancedBST(sorted, 0, sorted.size() - 1);
+
+        }
+
+        static class Info {
+            boolean isBST;
+            int size;
+            int min;
+            int max;
+
+            public Info(boolean isBST, int size, int min, int max) {
+                this.isBST = isBST;
+                this.size = size;
+                this.min = min;
+                this.max = max;
+            }
+        }
+
+        public static int maxBst = 0;
+
+        public Info largestBST(Node root) {
+
+            if (root == null) {
+                return new Info(true, 0, Integer.MAX_VALUE, Integer.MIN_VALUE);
+            }
+
+            Info leftInfo = largestBST(root.left);
+            Info rightInfo = largestBST(root.right);
+            int size = leftInfo.size + rightInfo.size + 1;
+            int min = Math.min(root.data, Math.min(leftInfo.min, rightInfo.min));
+            int max = Math.max(root.data, Math.max(leftInfo.max, rightInfo.max));
+
+            if (root.data <= leftInfo.max || root.data >= rightInfo.min) {
+                return new Info(false, size, min, max);
+            }
+            if (leftInfo.isBST && rightInfo.isBST) {
+                maxBst = Math.max(maxBst, size);
+                return new Info(true, size, min, max);
+            }
+            return new Info(false, size, min, max);
         }
     }
 
@@ -229,6 +268,7 @@ public class Binary_Search_Tree {
         // root = bst.mirror_a_BST(root);
         // bst.inOrder(root);
         root = bst.sortedArrayToBalancedBST(arr, 0, arr.length - 1);
-        bst.preOrder(root);
+        // bst.preOrder(root);
+        System.out.println(bst.largestBST(root).size);
     }
 }
