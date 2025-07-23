@@ -39,3 +39,51 @@ In this example, all left children are less than their parent, and all right chi
 
 ### note
 -> InOrder(left->root->right) traversal in the bst always gives a sorted sequence.
+## AVL Trees
+
+An **AVL Tree** is a self-balancing binary search tree where the difference between the heights of the left and right subtrees of any node (called the balance factor) is at most 1. This property ensures that the tree remains approximately balanced, leading to efficient operations.
+
+### Key Properties
+- **Balance Factor:** For every node, `Balance Factor = Height(Left Subtree) - Height(Right Subtree)`. It must be `-1`, `0`, or `1`.
+- **Self-Balancing:** After every insertion or deletion, the tree is rebalanced using rotations to maintain the balance factor.
+
+### Rotations
+To restore balance, AVL trees use the following rotations:
+1. **Right Rotation (RR):** Used when the left subtree is too tall.
+2. **Left Rotation (LL):** Used when the right subtree is too tall.
+3. **Left-Right Rotation (LR):** A combination of left and right rotations.
+4. **Right-Left Rotation (RL):** A combination of right and left rotations.
+
+### Operations and Time Complexity
+- **Search:** O(log N)
+- **Insertion:** O(log N)
+- **Deletion:** O(log N)
+
+The time complexity is logarithmic because the height of the tree is always maintained as `O(log N)` due to balancing.
+
+### Applications
+- Databases and file systems for indexing
+- Memory management in operating systems
+- Dynamic sets and lookup tables
+
+### Example
+
+```plaintext
+    30
+     /  \
+   20    40
+  /  \
+10    25
+```
+
+If a node is inserted or deleted such that the balance factor of any node becomes invalid, rotations are performed to restore balance.
+
+### Advantages of AVL Trees
+- Guaranteed logarithmic height ensures efficient operations.
+- Suitable for applications requiring frequent insertions and deletions.
+
+### Disadvantages of AVL Trees
+- Slightly more complex to implement compared to simple binary search trees.
+- Rotations add overhead during insertions and deletions.
+
+> Note: AVL trees are a good choice when the dataset is dynamic and requires frequent updates.

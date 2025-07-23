@@ -251,6 +251,38 @@ public class Binary_Search_Tree {
             }
             return new Info(false, size, min, max);
         }
+
+        public Node merge2Bst(Node root1, Node root2) {
+            // step-1:find sorted arrays from inorder traversal for root1 and root2
+            // step-2: merge two sorted array
+            // step-3: build balanced bst form the merged array.
+            ArrayList<Integer> sorted1 = new ArrayList<>();
+            ArrayList<Integer> sorted2 = new ArrayList<>();
+            getInOrder(root1, sorted1);
+            getInOrder(root2, sorted2);
+            int i = 0, j = 0;
+            ArrayList<Integer> merged = new ArrayList<>();
+            while (i < sorted1.size() && j < sorted2.size()) {
+                if (sorted1.get(i) <= sorted2.get(j)) {
+                    merged.add(sorted1.get(i));
+                    i++;
+                } else {
+                    merged.add(sorted2.get(j));
+                    j++;
+                }
+            }
+            while (i < sorted1.size()) {
+                merged.add(sorted1.get(i));
+                i++;
+            }
+            while (j < sorted2.size()) {
+                merged.add(sorted2.get(j));
+                j++;
+            }
+
+            Node newRoot = sortedArrayListToBalancedBST(merged, 0, merged.size() - 1);
+            return newRoot;
+        }
     }
 
     public static void main(String[] args) {
@@ -267,8 +299,28 @@ public class Binary_Search_Tree {
         // System.out.println(bst.isValidBST(root, null, null));
         // root = bst.mirror_a_BST(root);
         // bst.inOrder(root);
-        root = bst.sortedArrayToBalancedBST(arr, 0, arr.length - 1);
-        // bst.preOrder(root);
-        System.out.println(bst.largestBST(root).size);
+        // root = bst.sortedArrayToBalancedBST(arr, 0, arr.length - 1);
+        // // bst.preOrder(root);
+        // System.out.println(bst.largestBST(root).size);
+
+        BST bst1 = new BST();
+        bst1.root = new Node(2);
+        bst1.root.left = new Node(1);
+        bst1.root.right = new Node(3);
+
+        // 2
+        // / \
+        // 1 3
+
+        BST bst2 = new BST();
+        bst2.root = new Node(9);
+        bst2.root.left = new Node(4);
+        bst2.root.right = new Node(12);
+
+        // 9
+        // / \
+        // 4 12
+        bst1.root=bst1.merge2Bst(bst1.root, bst2.root);
+        bst1.inOrder(bst1.root);
     }
 }
