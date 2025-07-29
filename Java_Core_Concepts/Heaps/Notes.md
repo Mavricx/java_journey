@@ -1,3 +1,14 @@
+### Heap and Priority Queue: Are They the Same?
+
+While heaps and priority queues are closely related, they are not exactly the same:
+
+- A **heap** is a specific data structure that satisfies the heap property (max-heap or min-heap). It is often implemented as an array or binary tree.
+- A **priority queue** is an abstract data type that allows elements to be inserted and removed based on their priority.
+
+Heaps are commonly used as the underlying data structure to implement priority queues because they provide efficient insertion and deletion operations based on priority.
+
+In summary, a heap is a data structure, while a priority queue is a concept that can be implemented using a heap.
+
 ## Heaps
 
 A **heap** is a specialized tree-based data structure that satisfies the **heap property**. The heap property states that for a given node:
@@ -80,4 +91,9 @@ A **heap** is a specialized tree-based data structure that satisfies the **heap 
 
 ## Notes.
 
-> Heaps are not implemented as class because insertion of new node will take too much time( 1.O(n):for traversing + 2.extra time for placing new node at correct position.)
+- Heaps are not implemented as class because insertion of new node will take too much time( 1.O(n):for traversing + 2.extra time for placing new node at correct position.)
+- We visualize the heap using binary tree but we implement it using array or array list due the reason mentioned above.
+- If the index of a node is `i` the the left child of that node will have index `2i+1` and right child will have index of `2i+2`.
+- if node idx=i
+  then left child=2i+1
+       right child=2i+2

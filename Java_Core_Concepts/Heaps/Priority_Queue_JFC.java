@@ -1,4 +1,4 @@
-package Java_Core_Concepts.Priority_Queue;
+package Java_Core_Concepts.Heaps;
 
 import java.util.*;
 

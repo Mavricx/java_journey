@@ -31,7 +31,6 @@ public class Next_Greater_Element {
 
     }
 }
-//next greater right
-//next smaller left-->loop(n->0) condition will be arr[stack.peek()] <= arr[i]
-//next smaller right-->loop reverse(going forward:0->n),and condition will be arr[stack.peek()] >= arr[i]
-// swayamsamparna.
+//next greater right.
+//next smaller left-->loop(n->0) condition will be arr[stack.peek()] <= arr[i].
+//next smaller right-->loop reverse(going forward:0->n),and condition will be arr[stack.peek()] >= arr[i].
