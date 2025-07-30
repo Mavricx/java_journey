@@ -6,16 +6,17 @@ public class HeapSort {
         int right = 2 * i + 2;
 
         int maxIdx = i;
-        if (left < arr.length && arr[left] > arr[maxIdx]) {
+        if (left < size && arr[left] > arr[maxIdx]) {
             maxIdx = left;
         }
-        if (right < arr.length && arr[right] > arr[maxIdx]) {
+        if (right < size && arr[right] > arr[maxIdx]) {
             maxIdx = right;
         }
         if (maxIdx != i) {
             int temp = arr[i];
             arr[i] = arr[maxIdx];
             arr[maxIdx] = temp;
+            heapify(arr, maxIdx, size);
         }
     }
 
@@ -48,7 +49,7 @@ public class HeapSort {
     }
 
     public static void main(String[] args) {
-        int arr[] = { 1, 2, 3, 4, 5 };
+        int arr[] = { 1, 2, 4, 5, 3 };
         heapSort(arr);
 
         for (int a : arr) {
