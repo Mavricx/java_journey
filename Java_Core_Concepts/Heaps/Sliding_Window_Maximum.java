@@ -28,12 +28,13 @@ public class Sliding_Window_Maximum {
         }
         res[0]=pq.peek().value;
         for(int i=k;i<arr.length;i++){
-             while(pq.size()>0 && pq.peek().idx<=(i-k)){
+             while(pq.size()>0 && pq.peek().idx<=(i-k)){// Remove elements that are out of the current window
+                 // If the index of the top element is less than or equal to i-k, it means it's out of the current window
                 pq.remove();
              }
 
              pq.add(new Pair(arr[i],i));
-             res[i-k+1]=pq.peek().value;
+             res[i-k+1]=pq.peek().value;// Store the maximum of the current window
         }
         for(int i=0;i<res.length;i++){
             System.out.print(res[i] + " ");
