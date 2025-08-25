@@ -30,4 +30,4 @@ public class Subarray_sum_Equal_to_k {
         }
         System.out.println("Number of sub arrays with sum "+k+" is: "+count);
     }
-}
+} 
