@@ -34,3 +34,21 @@
 8. Computer Vision(Image segmentation)
 9. For Database( Nebula, neo4g)
 10. For research Purposes
+
+## Cycle Detection in Graphs
+
+### In case of undirected Graphs
+
+      - we can use
+      1. BFS
+      2. DFS
+      3. DSU(Disjoint set union)
+
+### In case of directed Graphs
+
+      - we can use
+      1. BFS
+      2. DFS
+      #. Topological sort(Kahn's Algorithm)
+ 
+-Generally DFS is used for easy implementation and low memory consumption.
