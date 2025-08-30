@@ -52,3 +52,16 @@
       #. Topological sort(Kahn's Algorithm)
  
 -Generally DFS is used for easy implementation and low memory consumption.
+ ### Here is the approach on cycle detection.
+ - We are going to use DFS(recursive) for previous reasons.
+ - While traversing the graph here comes three cases.
+   1. case-I: The next node is unvisited and we call recursive detectCycle for cycle detection( return cycleDetect(next node))
+   2. case-II: If the next node is visited and it is not our current parent then return true..as we found new path to the node where we visited earlier forming a cycle in the process.
+   3. case-III : if the next node is our parent and is visited then we continue without any operation as this neighbor we visited earlier and don't need any operation for it.
+
+
+ # Bipartite Graph
+- A Bipartite Graph is a graph whose vertices can be divided into two independent sets, U and V such that every edge
+(u, v) either connects a vertex from U to V or a vertex from V to U. In other words, for every edge (u, v), either u
+belongs to U and v to V, or u belongs to V and v to U. We can also say that there is no edge that connects vertices of
+same set.

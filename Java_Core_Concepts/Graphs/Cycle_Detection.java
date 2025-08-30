@@ -37,7 +37,7 @@ public class Cycle_Detection {
         boolean vis[] = new boolean[graph.length];
         for (int i = 0; i < graph.length; i++) {
             if (!vis[i]) {
-                return detectCycleUtil(graph, vis, i, -1);
+                return detectCycleUtil(graph, vis, i, -1);//start with parent. -1
             }
 
         }
