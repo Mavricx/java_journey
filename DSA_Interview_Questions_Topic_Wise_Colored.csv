@@ -1,0 +1,145 @@
+,Topic,Question,Platform,URL,Notes,Difficulty,Completion
+1,Arrays,Two Sum,LeetCode,https://leetcode.com/problems/two-sum/,,Easy,Need to Start
+2,Arrays,Best Time to Buy and Sell Stock,LeetCode,https://leetcode.com/problems/best-time-to-buy-and-sell-stock/,,Medium,Need to Start
+3,Arrays,Contains Duplicate,LeetCode,https://leetcode.com/problems/contains-duplicate/,,Medium,Need to Start
+4,Arrays,Maximum Subarray (Kadane’s Algorithm),LeetCode,https://leetcode.com/problems/maximum-subarray/,,Medium,Need to Start
+5,Arrays,Product of Array Except Self,LeetCode,https://leetcode.com/problems/product-of-array-except-self/,,Medium,Need to Start
+6,Arrays,Merge Intervals,LeetCode,https://leetcode.com/problems/merge-intervals/,,Medium,Need to Start
+7,Arrays,3Sum,LeetCode,https://leetcode.com/problems/3sum/,,Medium,Need to Start
+8,Arrays,Set Matrix Zeroes,LeetCode,https://leetcode.com/problems/set-matrix-zeroes/,,Medium,Need to Start
+9,Arrays,Insert Interval,LeetCode,https://leetcode.com/problems/insert-interval/,,Medium,Need to Start
+10,Arrays,Subarray Sum Equals K,LeetCode,https://leetcode.com/problems/subarray-sum-equals-k/,,Medium,Need to Start
+11,Arrays,Find the Duplicate Number,LeetCode,https://leetcode.com/problems/find-the-duplicate-number/,,Medium,Need to Start
+12,Arrays,Maximum Product Subarray,LeetCode,https://leetcode.com/problems/maximum-product-subarray/,,Medium,Need to Start
+13,Strings,Valid Anagram,LeetCode,https://leetcode.com/problems/valid-anagram/,,Easy,Need to Start
+14,Strings,Group Anagrams,LeetCode,https://leetcode.com/problems/group-anagrams/,,Medium,Need to Start
+15,Strings,Longest Substring Without Repeating Characters,LeetCode,https://leetcode.com/problems/longest-substring-without-repeating-characters/,,Medium,Need to Start
+16,Strings,Longest Palindromic Substring,LeetCode,https://leetcode.com/problems/longest-palindromic-substring/,,Medium,Need to Start
+17,Strings,Valid Palindrome,LeetCode,https://leetcode.com/problems/valid-palindrome/,,Medium,Need to Start
+18,Strings,String to Integer (atoi),LeetCode,https://leetcode.com/problems/string-to-integer-atoi/,,Medium,Need to Start
+19,Strings,Implement strStr() (KMP/Rabin-Karp),LeetCode,https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/,,Medium,Need to Start
+20,Strings,Longest Repeating Character Replacement,LeetCode,https://leetcode.com/problems/longest-repeating-character-replacement/,,Medium,Need to Start
+21,Strings,Minimum Window Substring,LeetCode,https://leetcode.com/problems/minimum-window-substring/,,Hard,Need to Start
+22,Strings,Decode String,LeetCode,https://leetcode.com/problems/decode-string/,,Medium,Need to Start
+23,Strings,Valid Parentheses,LeetCode,https://leetcode.com/problems/valid-parentheses/,,Easy,Need to Start
+24,Strings,Roman to Integer,LeetCode,https://leetcode.com/problems/roman-to-integer/,,Medium,Need to Start
+25,Hash Maps & Sets,Two Sum (Hash Map),LeetCode,https://leetcode.com/problems/two-sum/,,Easy,Need to Start
+26,Hash Maps & Sets,Valid Anagram,LeetCode,https://leetcode.com/problems/valid-anagram/,,Easy,Need to Start
+27,Hash Maps & Sets,Isomorphic Strings,LeetCode,https://leetcode.com/problems/isomorphic-strings/,,Medium,Need to Start
+28,Hash Maps & Sets,Word Pattern,LeetCode,https://leetcode.com/problems/word-pattern/,,Medium,Need to Start
+29,Hash Maps & Sets,Group Anagrams,LeetCode,https://leetcode.com/problems/group-anagrams/,,Medium,Need to Start
+30,Hash Maps & Sets,Longest Consecutive Sequence,LeetCode,https://leetcode.com/problems/longest-consecutive-sequence/,,Medium,Need to Start
+31,Hash Maps & Sets,Ransom Note,LeetCode,https://leetcode.com/problems/ransom-note/,,Medium,Need to Start
+32,Hash Maps & Sets,Happy Number,LeetCode,https://leetcode.com/problems/happy-number/,,Medium,Need to Start
+33,Hash Maps & Sets,Subarray Sum Equals K,LeetCode,https://leetcode.com/problems/subarray-sum-equals-k/,,Medium,Need to Start
+34,Hash Maps & Sets,Top K Frequent Elements,LeetCode,https://leetcode.com/problems/top-k-frequent-elements/,,Medium,Need to Start
+35,Hash Maps & Sets,LRU Cache (HashMap + DLL),LeetCode,https://leetcode.com/problems/lru-cache/,,Medium,Need to Start
+36,Hash Maps & Sets,Design Underground System (Hash Map design),LeetCode,https://leetcode.com/problems/design-underground-system/,,Medium,Need to Start
+37,Linked Lists,Reverse Linked List,LeetCode,https://leetcode.com/problems/reverse-linked-list/,,Easy,Need to Start
+38,Linked Lists,Merge Two Sorted Lists,LeetCode,https://leetcode.com/problems/merge-two-sorted-lists/,,Medium,Need to Start
+39,Linked Lists,Linked List Cycle,LeetCode,https://leetcode.com/problems/linked-list-cycle/,,Medium,Need to Start
+40,Linked Lists,Remove Nth Node From End of List,LeetCode,https://leetcode.com/problems/remove-nth-node-from-end-of-list/,,Medium,Need to Start
+41,Linked Lists,Intersection of Two Linked Lists,LeetCode,https://leetcode.com/problems/intersection-of-two-linked-lists/,,Medium,Need to Start
+42,Linked Lists,Palindrome Linked List,LeetCode,https://leetcode.com/problems/palindrome-linked-list/,,Medium,Need to Start
+43,Linked Lists,Add Two Numbers,LeetCode,https://leetcode.com/problems/add-two-numbers/,,Medium,Need to Start
+44,Linked Lists,Reorder List,LeetCode,https://leetcode.com/problems/reorder-list/,,Medium,Need to Start
+45,Linked Lists,Swap Nodes in Pairs,LeetCode,https://leetcode.com/problems/swap-nodes-in-pairs/,,Medium,Need to Start
+46,Linked Lists,Odd Even Linked List,LeetCode,https://leetcode.com/problems/odd-even-linked-list/,,Medium,Need to Start
+47,Linked Lists,Sort List,LeetCode,https://leetcode.com/problems/sort-list/,,Medium,Need to Start
+48,Linked Lists,Copy List with Random Pointer,LeetCode,https://leetcode.com/problems/copy-list-with-random-pointer/,,Medium,Need to Start
+49,Stack & Queue,Valid Parentheses,LeetCode,https://leetcode.com/problems/valid-parentheses/,,Easy,Need to Start
+50,Stack & Queue,Min Stack,LeetCode,https://leetcode.com/problems/min-stack/,,Medium,Need to Start
+51,Stack & Queue,Evaluate Reverse Polish Notation,LeetCode,https://leetcode.com/problems/evaluate-reverse-polish-notation/,,Medium,Need to Start
+52,Stack & Queue,Daily Temperatures,LeetCode,https://leetcode.com/problems/daily-temperatures/,,Medium,Need to Start
+53,Stack & Queue,Next Greater Element I/II,LeetCode,https://leetcode.com/problems/next-greater-element-ii/,,Medium,Need to Start
+54,Stack & Queue,Implement Queue using Stacks,LeetCode,https://leetcode.com/problems/implement-queue-using-stacks/,,Medium,Need to Start
+55,Stack & Queue,Largest Rectangle in Histogram,LeetCode,https://leetcode.com/problems/largest-rectangle-in-histogram/,,Medium,Need to Start
+56,Stack & Queue,Sliding Window Maximum (Deque),LeetCode,https://leetcode.com/problems/sliding-window-maximum/,,Medium,Need to Start
+57,Stack & Queue,Simplify Path,LeetCode,https://leetcode.com/problems/simplify-path/,,Medium,Need to Start
+58,Stack & Queue,Binary Tree Zigzag Level Order Traversal (Queue BFS),LeetCode,https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/,,Medium,Need to Start
+59,Stack & Queue,Asteroid Collision,LeetCode,https://leetcode.com/problems/asteroid-collision/,,Medium,Need to Start
+60,Stack & Queue,Implement Stack using Queues,LeetCode,https://leetcode.com/problems/implement-stack-using-queues/,,Medium,Need to Start
+61,Binary Trees & BST,Invert Binary Tree,LeetCode,https://leetcode.com/problems/invert-binary-tree/,,Medium,Need to Start
+62,Binary Trees & BST,Maximum Depth of Binary Tree,LeetCode,https://leetcode.com/problems/maximum-depth-of-binary-tree/,,Easy,Need to Start
+63,Binary Trees & BST,Diameter of Binary Tree,LeetCode,https://leetcode.com/problems/diameter-of-binary-tree/,,Medium,Need to Start
+64,Binary Trees & BST,Path Sum,LeetCode,https://leetcode.com/problems/path-sum/,,Medium,Need to Start
+65,Binary Trees & BST,Balanced Binary Tree,LeetCode,https://leetcode.com/problems/balanced-binary-tree/,,Medium,Need to Start
+66,Binary Trees & BST,Symmetric Tree,LeetCode,https://leetcode.com/problems/symmetric-tree/,,Medium,Need to Start
+67,Binary Trees & BST,Binary Tree Level Order Traversal,LeetCode,https://leetcode.com/problems/binary-tree-level-order-traversal/,,Medium,Need to Start
+68,Binary Trees & BST,Lowest Common Ancestor of a BST,LeetCode,https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/,,Medium,Need to Start
+69,Binary Trees & BST,Validate Binary Search Tree,LeetCode,https://leetcode.com/problems/validate-binary-search-tree/,,Medium,Need to Start
+70,Binary Trees & BST,Construct Binary Tree from Preorder and Inorder Traversal,LeetCode,https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/,,Medium,Need to Start
+71,Binary Trees & BST,Serialize and Deserialize Binary Tree,LeetCode,https://leetcode.com/problems/serialize-and-deserialize-binary-tree/,,Hard,Need to Start
+72,Binary Trees & BST,Kth Smallest Element in a BST,LeetCode,https://leetcode.com/problems/kth-smallest-element-in-a-bst/,,Medium,Need to Start
+73,Graphs,Number of Islands,LeetCode,https://leetcode.com/problems/number-of-islands/,,Medium,Need to Start
+74,Graphs,Clone Graph,LeetCode,https://leetcode.com/problems/clone-graph/,,Medium,Need to Start
+75,Graphs,Course Schedule,LeetCode,https://leetcode.com/problems/course-schedule/,,Medium,Need to Start
+76,Graphs,Course Schedule II,LeetCode,https://leetcode.com/problems/course-schedule-ii/,,Medium,Need to Start
+77,Graphs,Rotting Oranges,LeetCode,https://leetcode.com/problems/rotting-oranges/,,Medium,Need to Start
+78,Graphs,Word Ladder,LeetCode,https://leetcode.com/problems/word-ladder/,,Hard,Need to Start
+79,Graphs,Pacific Atlantic Water Flow,LeetCode,https://leetcode.com/problems/pacific-atlantic-water-flow/,,Medium,Need to Start
+80,Graphs,Evaluate Division,LeetCode,https://leetcode.com/problems/evaluate-division/,,Medium,Need to Start
+81,Graphs,Graph Valid Tree,LeetCode,https://leetcode.com/problems/graph-valid-tree/,,Medium,Need to Start
+82,Graphs,Minimum Spanning Tree (Kruskal/Prim) - GfG,GeeksforGeeks,https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm/,Concept + practice on GfG,Medium,Need to Start
+83,Graphs,Dijkstra's Shortest Path - GfG,GeeksforGeeks,https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/,Concept + practice on GfG,Medium,Need to Start
+84,Graphs,Redundant Connection,LeetCode,https://leetcode.com/problems/redundant-connection/,,Medium,Need to Start
+85,Dynamic Programming,Climbing Stairs,LeetCode,https://leetcode.com/problems/climbing-stairs/,,Easy,Need to Start
+86,Dynamic Programming,House Robber,LeetCode,https://leetcode.com/problems/house-robber/,,Medium,Need to Start
+87,Dynamic Programming,House Robber II,LeetCode,https://leetcode.com/problems/house-robber-ii/,,Medium,Need to Start
+88,Dynamic Programming,Coin Change,LeetCode,https://leetcode.com/problems/coin-change/,,Medium,Need to Start
+89,Dynamic Programming,Longest Increasing Subsequence,LeetCode,https://leetcode.com/problems/longest-increasing-subsequence/,,Medium,Need to Start
+90,Dynamic Programming,Longest Common Subsequence,LeetCode,https://leetcode.com/problems/longest-common-subsequence/,,Medium,Need to Start
+91,Dynamic Programming,Unique Paths,LeetCode,https://leetcode.com/problems/unique-paths/,,Medium,Need to Start
+92,Dynamic Programming,Decode Ways,LeetCode,https://leetcode.com/problems/decode-ways/,,Medium,Need to Start
+93,Dynamic Programming,Word Break,LeetCode,https://leetcode.com/problems/word-break/,,Medium,Need to Start
+94,Dynamic Programming,Partition Equal Subset Sum,LeetCode,https://leetcode.com/problems/partition-equal-subset-sum/,,Medium,Need to Start
+95,Dynamic Programming,Edit Distance,LeetCode,https://leetcode.com/problems/edit-distance/,,Hard,Need to Start
+96,Dynamic Programming,Jump Game,LeetCode,https://leetcode.com/problems/jump-game/,,Medium,Need to Start
+97,Backtracking & Recursion,Subsets,LeetCode,https://leetcode.com/problems/subsets/,,Medium,Need to Start
+98,Backtracking & Recursion,Subsets II,LeetCode,https://leetcode.com/problems/subsets-ii/,,Medium,Need to Start
+99,Backtracking & Recursion,Permutations,LeetCode,https://leetcode.com/problems/permutations/,,Medium,Need to Start
+100,Backtracking & Recursion,Permutations II,LeetCode,https://leetcode.com/problems/permutations-ii/,,Medium,Need to Start
+101,Backtracking & Recursion,Combination Sum,LeetCode,https://leetcode.com/problems/combination-sum/,,Medium,Need to Start
+102,Backtracking & Recursion,Combination Sum II,LeetCode,https://leetcode.com/problems/combination-sum-ii/,,Medium,Need to Start
+103,Backtracking & Recursion,Combinations,LeetCode,https://leetcode.com/problems/combinations/,,Medium,Need to Start
+104,Backtracking & Recursion,Generate Parentheses,LeetCode,https://leetcode.com/problems/generate-parentheses/,,Medium,Need to Start
+105,Backtracking & Recursion,Letter Combinations of a Phone Number,LeetCode,https://leetcode.com/problems/letter-combinations-of-a-phone-number/,,Medium,Need to Start
+106,Backtracking & Recursion,N-Queens,LeetCode,https://leetcode.com/problems/n-queens/,,Hard,Need to Start
+107,Backtracking & Recursion,Word Search,LeetCode,https://leetcode.com/problems/word-search/,,Medium,Need to Start
+108,Backtracking & Recursion,Palindrome Partitioning,LeetCode,https://leetcode.com/problems/palindrome-partitioning/,,Medium,Need to Start
+109,Heaps & Priority Queue,Kth Largest Element in an Array,LeetCode,https://leetcode.com/problems/kth-largest-element-in-an-array/,,Medium,Need to Start
+110,Heaps & Priority Queue,Top K Frequent Elements,LeetCode,https://leetcode.com/problems/top-k-frequent-elements/,,Medium,Need to Start
+111,Heaps & Priority Queue,K Closest Points to Origin,LeetCode,https://leetcode.com/problems/k-closest-points-to-origin/,,Medium,Need to Start
+112,Heaps & Priority Queue,Merge k Sorted Lists,LeetCode,https://leetcode.com/problems/merge-k-sorted-lists/,,Medium,Need to Start
+113,Heaps & Priority Queue,Find Median from Data Stream,LeetCode,https://leetcode.com/problems/find-median-from-data-stream/,,Medium,Need to Start
+114,Heaps & Priority Queue,Task Scheduler,LeetCode,https://leetcode.com/problems/task-scheduler/,,Medium,Need to Start
+115,Heaps & Priority Queue,Reorganize String,LeetCode,https://leetcode.com/problems/reorganize-string/,,Medium,Need to Start
+116,Heaps & Priority Queue,IPO,LeetCode,https://leetcode.com/problems/ipo/,,Medium,Need to Start
+117,Heaps & Priority Queue,Ugly Number II (DP+Heap),LeetCode,https://leetcode.com/problems/ugly-number-ii/,,Medium,Need to Start
+118,Heaps & Priority Queue,Minimum Cost to Connect Sticks,LeetCode,https://leetcode.com/problems/minimum-cost-to-connect-sticks/,,Medium,Need to Start
+119,Heaps & Priority Queue,Swim in Rising Water,LeetCode,https://leetcode.com/problems/swim-in-rising-water/,,Medium,Need to Start
+120,Heaps & Priority Queue,Reduce Array Size to The Half,LeetCode,https://leetcode.com/problems/reduce-array-size-to-the-half/,,Medium,Need to Start
+121,Sliding Window & Two Pointers,Longest Substring Without Repeating Characters,LeetCode,https://leetcode.com/problems/longest-substring-without-repeating-characters/,,Medium,Need to Start
+122,Sliding Window & Two Pointers,Minimum Window Substring,LeetCode,https://leetcode.com/problems/minimum-window-substring/,,Hard,Need to Start
+123,Sliding Window & Two Pointers,Longest Repeating Character Replacement,LeetCode,https://leetcode.com/problems/longest-repeating-character-replacement/,,Medium,Need to Start
+124,Sliding Window & Two Pointers,Sliding Window Maximum,LeetCode,https://leetcode.com/problems/sliding-window-maximum/,,Medium,Need to Start
+125,Sliding Window & Two Pointers,Fruit Into Baskets,LeetCode,https://leetcode.com/problems/fruit-into-baskets/,,Medium,Need to Start
+126,Sliding Window & Two Pointers,Subarray Product Less Than K,LeetCode,https://leetcode.com/problems/subarray-product-less-than-k/,,Medium,Need to Start
+127,Sliding Window & Two Pointers,3Sum,LeetCode,https://leetcode.com/problems/3sum/,,Medium,Need to Start
+128,Sliding Window & Two Pointers,Container With Most Water,LeetCode,https://leetcode.com/problems/container-with-most-water/,,Medium,Need to Start
+129,Sliding Window & Two Pointers,Trapping Rain Water,LeetCode,https://leetcode.com/problems/trapping-rain-water/,,Hard,Need to Start
+130,Sliding Window & Two Pointers,Backspace String Compare,LeetCode,https://leetcode.com/problems/backspace-string-compare/,,Medium,Need to Start
+131,Sliding Window & Two Pointers,Find All Anagrams in a String,LeetCode,https://leetcode.com/problems/find-all-anagrams-in-a-string/,,Medium,Need to Start
+132,Sliding Window & Two Pointers,Longest Subarray of 1's After Deleting One Element,LeetCode,https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/,,Medium,Need to Start
+133,Intervals & Greedy,Merge Intervals,LeetCode,https://leetcode.com/problems/merge-intervals/,,Medium,Need to Start
+134,Intervals & Greedy,Non-overlapping Intervals,LeetCode,https://leetcode.com/problems/non-overlapping-intervals/,,Medium,Need to Start
+135,Intervals & Greedy,Insert Interval,LeetCode,https://leetcode.com/problems/insert-interval/,,Medium,Need to Start
+136,Intervals & Greedy,Meeting Rooms (I/II),LeetCode,https://leetcode.com/problems/meeting-rooms-ii/,,Medium,Need to Start
+137,Intervals & Greedy,Minimum Number of Arrows to Burst Balloons,LeetCode,https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/,,Medium,Need to Start
+138,Intervals & Greedy,Gas Station,LeetCode,https://leetcode.com/problems/gas-station/,,Medium,Need to Start
+139,Intervals & Greedy,Hand of Straights,LeetCode,https://leetcode.com/problems/hand-of-straights/,,Medium,Need to Start
+140,Intervals & Greedy,Partition Labels,LeetCode,https://leetcode.com/problems/partition-labels/,,Medium,Need to Start
+141,Intervals & Greedy,Reconstruct Itinerary,LeetCode,https://leetcode.com/problems/reconstruct-itinerary/,,Medium,Need to Start
+142,Intervals & Greedy,Jump Game,LeetCode,https://leetcode.com/problems/jump-game/,,Medium,Need to Start
+143,Intervals & Greedy,Boats to Save People,LeetCode,https://leetcode.com/problems/boats-to-save-people/,,Medium,Need to Start
+144,Intervals & Greedy,Task Scheduler,LeetCode,https://leetcode.com/problems/task-scheduler/,,Medium,Need to Start
