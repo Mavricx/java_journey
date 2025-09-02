@@ -1,15 +1,15 @@
 ,Topic,Question,Platform,URL,Notes,Difficulty,Completion
-1,Arrays,Two Sum,LeetCode,https://leetcode.com/problems/two-sum/,,Easy,Need to Start
-2,Arrays,Best Time to Buy and Sell Stock,LeetCode,https://leetcode.com/problems/best-time-to-buy-and-sell-stock/,,Medium,Need to Start
-3,Arrays,Contains Duplicate,LeetCode,https://leetcode.com/problems/contains-duplicate/,,Medium,Need to Start
-4,Arrays,Maximum Subarray (Kadane’s Algorithm),LeetCode,https://leetcode.com/problems/maximum-subarray/,,Medium,Need to Start
-5,Arrays,Product of Array Except Self,LeetCode,https://leetcode.com/problems/product-of-array-except-self/,,Medium,Need to Start
-6,Arrays,Merge Intervals,LeetCode,https://leetcode.com/problems/merge-intervals/,,Medium,Need to Start
+1,Arrays,Two Sum,LeetCode,https://leetcode.com/problems/two-sum/,,Easy,Completed
+2,Arrays,Best Time to Buy and Sell Stock,LeetCode,https://leetcode.com/problems/best-time-to-buy-and-sell-stock/,,Easy,Completed
+3,Arrays,Contains Duplicate,LeetCode,https://leetcode.com/problems/contains-duplicate/,,Easy,Completed
+4,Arrays,Maximum Subarray (Kadane’s Algorithm),LeetCode,https://leetcode.com/problems/maximum-subarray/,,Medium,Completed
+5,Arrays,Product of Array Except Self,LeetCode,https://leetcode.com/problems/product-of-array-except-self/,,Medium,Completed
+6,Arrays,Merge Intervals,LeetCode,https://leetcode.com/problems/merge-intervals/,,Medium,Need One More Glance
 7,Arrays,3Sum,LeetCode,https://leetcode.com/problems/3sum/,,Medium,Need to Start
 8,Arrays,Set Matrix Zeroes,LeetCode,https://leetcode.com/problems/set-matrix-zeroes/,,Medium,Need to Start
 9,Arrays,Insert Interval,LeetCode,https://leetcode.com/problems/insert-interval/,,Medium,Need to Start
 10,Arrays,Subarray Sum Equals K,LeetCode,https://leetcode.com/problems/subarray-sum-equals-k/,,Medium,Need to Start
-11,Arrays,Find the Duplicate Number,LeetCode,https://leetcode.com/problems/find-the-duplicate-number/,,Medium,Need to Start
+11,Arrays,Find the Duplicate Number,LeetCode,https://leetcode.com/problems/find-the-duplicate-number/,,Medium,Completed
 12,Arrays,Maximum Product Subarray,LeetCode,https://leetcode.com/problems/maximum-product-subarray/,,Medium,Need to Start
 13,Strings,Valid Anagram,LeetCode,https://leetcode.com/problems/valid-anagram/,,Easy,Need to Start
 14,Strings,Group Anagrams,LeetCode,https://leetcode.com/problems/group-anagrams/,,Medium,Need to Start
