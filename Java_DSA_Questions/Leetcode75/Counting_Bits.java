@@ -1,4 +1,4 @@
-package Java_DSA_Questions.Leetcode75;
+
 
 public class Counting_Bits {
     public static int[] countBits(int n) {
@@ -12,12 +12,27 @@ public class Counting_Bits {
         }
         return res;
     }
+      public static int[] countBits2(int n) {
+        int res[]=new int[n+1];
+        res[0]=0;
+        
+        for(int i=1;i<=n;i++){
+            res[i]=res[i>>1]+(i&1);
+        }
+        return res;
+    }
 
     public static void main(String[] args) {
         int n = 5;
         int arr[] = countBits(n);
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+
+        int arr2[] = countBits2(n);
+        for (int i = 0; i < arr2.length; i++) {
+            System.out.print(arr2[i] + " ");
         }
     }
 }
