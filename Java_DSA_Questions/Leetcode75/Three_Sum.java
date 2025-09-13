@@ -1,3 +1,4 @@
+package Java_DSA_Questions.Leetcode75;
 import java.util.*;
 
 public class Three_Sum {
@@ -21,6 +22,12 @@ public class Three_Sum {
 
         return new ArrayList<>(set);
     }
+
+    //approach
+    // 1. Use a HashSet to store the unique triplets.
+    // 2. Iterate through the array and for each element, use a HashSet to find pairs that sum to the negative of the current element.
+    // 3. Sort the triplet before adding to the result to avoid duplicates.
+    //time complexity: O(n^2) average case, O(n^3) worst case due to sorting each triplet.
     public List<List<Integer>> threeSum_hashing (int[] nums) {
         Set<List<Integer>> result = new HashSet<>();
         int n = nums.length;
@@ -36,20 +43,25 @@ public class Three_Sum {
                     result.add(triplet);
                 }
 
-                seen.add(nums[j]);
+                seen.add(nums[j]);// add current number to the set
             }
         }
 
         return new ArrayList<>(result);
     }
 
+    //approach
+    // 1. Sort the array.
+    // 2. Iterate through the array, and for each element, use the two-pointer technique to find pairs that sum to the negative of the current element.
+    // 3. Skip duplicate elements to avoid duplicate triplets.
+    //time complexity: O(n^2)
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);  // sort array first
 
         for (int i = 0; i < nums.length - 2; i++) {
             // skip duplicate values for 'i'
-            if (i > 0 && nums[i] == nums[i - 1]) continue;
+            if (i > 0 && nums[i] == nums[i - 1]) continue;// skip same result
 
             int left = i + 1;
             int right = nums.length - 1;

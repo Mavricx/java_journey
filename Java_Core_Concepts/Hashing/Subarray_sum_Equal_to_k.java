@@ -24,9 +24,9 @@ public class Subarray_sum_Equal_to_k {
         for(int j=0;j<arr.length;j++){
             sum+=arr[j];
             if(map.containsKey(sum-k)){// Check if (cumulativeSum - k) exists
-              count+=map.get(sum-k);
+              count+=map.get(sum-k);// If it exists, add the count from the HashMap 
             }
-            map.put(sum,map.getOrDefault(sum,0)+1);
+            map.put(sum,map.getOrDefault(sum,0)+1);// Store the current cumulative sum
         }
         System.out.println("Number of sub arrays with sum "+k+" is: "+count);
     }
