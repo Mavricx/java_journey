@@ -38,7 +38,7 @@ public class Group_Anagrams {
             }
              StringBuilder sb=new StringBuilder();
              for(int num:count){
-                sb.append('#');
+                sb.append('#');//to separate different character counts
                 sb.append(num);
              }
             String key=sb.toString();
