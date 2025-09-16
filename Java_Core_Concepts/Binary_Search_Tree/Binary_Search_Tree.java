@@ -26,6 +26,8 @@ public class Binary_Search_Tree {
             return root;
         }
 
+        // insert in BST
+        // time complexity O(h) h is the height of the tree
         public static Node insert(Node root, int val) {
             if (root == null) {
                 root = new Node(val);
