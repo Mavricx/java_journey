@@ -155,6 +155,22 @@ public class Tree {
 
         }
 
+        public static int maxLen(Node root, int [] maxi){
+            if(root==null){
+                return 0;
+            }
+            int lh=maxLen(root.left,maxi);//left height
+            int rh=maxLen(root.right,maxi);//right height
+            maxi[0]=Math.max(lh+rh,maxi[0]);//updating the maximum length
+            return Math.max(lh,rh)+1;
+        }
+
+        public static int diameterOfBinaryTree(Node root) {
+            int [] maxi=new int[1];
+            maxLen(root,maxi);
+            return maxi[0];
+        }
+
         public static boolean isIdentical(Node node, Node subRoot) {
             if (node == null && subRoot == null) {
                 return true;

@@ -7,6 +7,11 @@ public class Stack_Using_2Queues {
         static Queue<Integer> q1 = new LinkedList<>();
         static Queue<Integer> q2 = new LinkedList<>();
 
+        //approach
+        // for push operation we will add the element in the empty queue
+        // for pop and peek operation we will remove all the elements from the non-empty queue
+        // except the last element and add them to the empty queue
+        // then we will return the last element for pop operation and return the last element without removing it for peek operation
         public static boolean isEmpty() {
             return q1.isEmpty() && q2.isEmpty();
         }

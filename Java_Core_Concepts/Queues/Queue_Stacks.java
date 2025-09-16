@@ -4,6 +4,17 @@ import java.util.Stack;
 
 public class Queue_Stacks {
 
+    //approach
+    // We will use two stacks to implement the queue
+    // s1 and s2
+    // for add operation we will push the element in s1
+    // for remove and peek operation we will check if s2 is empty
+    // if s2 is empty we will pop all the elements from s1 and push them in s2
+    // then we will pop or peek the element from s2
+    // if s2 is not empty we will directly pop or peek the element from s2
+    // this way we can implement the queue using stacks
+    // time complexity of add operation is O(n) in worst case
+    // time complexity of remove and peek operation is O(1) in average case
     static class Queue1 {
         static Stack<Integer> s1 = new Stack<>();
         static Stack<Integer> s2 = new Stack<>();

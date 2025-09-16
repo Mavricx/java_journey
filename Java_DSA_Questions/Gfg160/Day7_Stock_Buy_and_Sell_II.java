@@ -5,7 +5,7 @@ public class Day7_Stock_Buy_and_Sell_II {
         int profit=0;
         for(int i=1;i<prices.length;i++){
             if(prices[i]>prices[i-1]){
-                profit+=prices[i]-prices[i-1];
+                profit+=prices[i]-prices[i-1];//if the current price is greater than the previous price we will buy at the previous price and sell at the current price
             }
         }
         return profit;
