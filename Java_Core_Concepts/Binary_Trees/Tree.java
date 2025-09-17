@@ -91,6 +91,53 @@ public class Tree {
             }
         }
 
+        public List<List<Integer>> levelOrderWithArrayList(Node root) {
+            List<List<Integer>> list = new ArrayList<>();
+            if (root == null) {
+                return list;
+            }
+            Queue<Node> q = new LinkedList<>();
+            q.add(root);
+            while (!q.isEmpty()) {
+                int levelSize = q.size();
+                List<Integer> temp = new ArrayList<>();
+                for (int i = 0; i < levelSize; i++) {
+                    Node curNode = q.remove();
+                    temp.add(curNode.data);
+                    if (curNode.left != null)
+                        q.add(curNode.left);
+                    if (curNode.right != null)
+                        q.add(curNode.right);
+                }
+                list.add(temp);
+            }
+            return list;
+        }
+
+        public boolean hasPathSum(Node root, int targetSum) {
+            if (root == null)
+                return false;
+            // if its a leaf node.
+            if (root.left == null && root.right == null)
+                return targetSum == root.data;
+
+            int newTarget = targetSum - root.data;
+            return hasPathSum(root.left, newTarget) || hasPathSum(root.right, newTarget);
+        }
+
+        public int minDepth(Node root) {
+            if (root == null)
+                return 0;
+            // if one child is null, go through the non-null child
+            if (root.left == null)
+                return 1 + minDepth(root.right);
+            if (root.right == null)
+                return 1 + minDepth(root.left);
+            // if both children exist ,take the both minimum into consideration.
+            return 1 + Math.min(minDepth(root.left), minDepth(root.right));
+
+        }
+
         public static int height(Node root) {
             if (root == null) {
                 return 0;
@@ -155,19 +202,19 @@ public class Tree {
 
         }
 
-        public static int maxLen(Node root, int [] maxi){
-            if(root==null){
+        public static int maxLen(Node root, int[] maxi) {
+            if (root == null) {
                 return 0;
             }
-            int lh=maxLen(root.left,maxi);//left height
-            int rh=maxLen(root.right,maxi);//right height
-            maxi[0]=Math.max(lh+rh,maxi[0]);//updating the maximum length
-            return Math.max(lh,rh)+1;
+            int lh = maxLen(root.left, maxi);// left height
+            int rh = maxLen(root.right, maxi);// right height
+            maxi[0] = Math.max(lh + rh, maxi[0]);// updating the maximum length
+            return Math.max(lh, rh) + 1;
         }
 
         public static int diameterOfBinaryTree(Node root) {
-            int [] maxi=new int[1];
-            maxLen(root,maxi);
+            int[] maxi = new int[1];
+            maxLen(root, maxi);
             return maxi[0];
         }
 
