@@ -165,317 +165,337 @@ public class Tree {
             return leftSum + rightSum + root.data;
         }
 
-        public static int diameter(Node root) {// no of nodes in the longest path between 2 leaves. time complexity
-                                               // :O(n^2)
-            if (root == null) {
+        public static int countNodes(Node root) {
+            if (root == null)
                 return 0;
-            }
-            int leftDiameter = diameter(root.left);
-            int rightDiameter = diameter(root.right);
-            int lh = height(root.left);
-            int rh = height(root.right);
-            int selfDiameter = lh + rh + 1;
-            return Math.max(leftDiameter, Math.max(rightDiameter, selfDiameter));
-
-        }
-        // approach 2 for diameter calculation :Time complexity:O(n)
-
-        static class Info {
-            int diam;
-            int ht;
-
-            public Info(int diam, int ht) {
-                this.diam = diam;
-                this.ht = ht;
-            }
+            return countNodes(root.left) + countNodes(root.right) + 1;
         }
 
-        public static Info diameter2(Node root) {
-            if (root == null) {
-                return new Info(0, 0);
-            }
-            Info leftInfo = diameter2(root.left);
-            Info rightInfo = diameter2(root.right);
-            int diam = Math.max(leftInfo.diam, Math.max(rightInfo.diam, (leftInfo.ht + rightInfo.ht + 1)));
-            int height = Math.max(leftInfo.ht, rightInfo.ht) + 1;
-            return new Info(diam, height);
+        public static int countNodes2(Node root) {
+            return lookForNull(root) - 1;
 
         }
-
-        public static int maxLen(Node root, int[] maxi) {
-            if (root == null) {
-                return 0;
-            }
-            int lh = maxLen(root.left, maxi);// left height
-            int rh = maxLen(root.right, maxi);// right height
-            maxi[0] = Math.max(lh + rh, maxi[0]);// updating the maximum length
-            return Math.max(lh, rh) + 1;
+        public static int lookForNull(Node root){
+        if(root==null) return 1;
+        int left=lookForNull(root.left);
+        int right=lookForNull(root.right);
+        return left+right;
+    }
+    public static int diameter(Node root) {// no of nodes in the longest path between 2 leaves. time complexity
+                                           // :O(n^2)
+        if (root == null) {
+            return 0;
         }
+        int leftDiameter = diameter(root.left);
+        int rightDiameter = diameter(root.right);
+        int lh = height(root.left);
+        int rh = height(root.right);
+        int selfDiameter = lh + rh + 1;
+        return Math.max(leftDiameter, Math.max(rightDiameter, selfDiameter));
 
-        public static int diameterOfBinaryTree(Node root) {
-            int[] maxi = new int[1];
-            maxLen(root, maxi);
-            return maxi[0];
+    }
+    }
+
+    
+    // approach 2 for diameter calculation :Time complexity:O(n)
+
+    static class Info {
+        int diam;
+        int ht;
+
+        public Info(int diam, int ht) {
+            this.diam = diam;
+            this.ht = ht;
         }
+    }
 
-        public static boolean isIdentical(Node node, Node subRoot) {
-            if (node == null && subRoot == null) {
-                return true;
-            } else if (node == null || subRoot == null || node.data != subRoot.data) {
-                return false;
-            }
-            if (!isIdentical(node.left, subRoot.left)) {
-                return false;
-            }
-            if (!isIdentical(node.right, subRoot.right)) {
-                return false;
-            }
+    public static Info diameter2(Node root) {
+        if (root == null) {
+            return new Info(0, 0);
+        }
+        Info leftInfo = diameter2(root.left);
+        Info rightInfo = diameter2(root.right);
+        int diam = Math.max(leftInfo.diam, Math.max(rightInfo.diam, (leftInfo.ht + rightInfo.ht + 1)));
+        int height = Math.max(leftInfo.ht, rightInfo.ht) + 1;
+        return new Info(diam, height);
 
+    }
+
+    public static int maxLen(Node root, int[] maxi) {
+        if (root == null) {
+            return 0;
+        }
+        int lh = maxLen(root.left, maxi);// left height
+        int rh = maxLen(root.right, maxi);// right height
+        maxi[0] = Math.max(lh + rh, maxi[0]);// updating the maximum length
+        return Math.max(lh, rh) + 1;
+    }
+
+    public static int diameterOfBinaryTree(Node root) {
+        int[] maxi = new int[1];
+        maxLen(root, maxi);
+        return maxi[0];
+    }
+
+    public static boolean isIdentical(Node node, Node subRoot) {
+        if (node == null && subRoot == null) {
             return true;
+        } else if (node == null || subRoot == null || node.data != subRoot.data) {
+            return false;
         }
-
-        public static boolean isSubtree(Node root, Node subRoot) {
-            // step-1: find sub root in the main tree.
-            // step-2: recursively check the subtree is identical to each other or not.
-
-            if (root == null) {
-                return false;
-            }
-            if (root.data == subRoot.data) {
-                if (isIdentical(root, subRoot)) {
-                    return true;
-                }
-            }
-            boolean leftAns = isSubtree(root.left, subRoot);
-            boolean rightAns = isSubtree(root.right, subRoot);
-
-            return leftAns || rightAns;
+        if (!isIdentical(node.left, subRoot.left)) {
+            return false;
         }
-
-        static class NodeInfo {
-            Node node;
-            int hd;
-
-            NodeInfo(Node node, int hd) {
-                this.node = node;
-                this.hd = hd;
-            }
-        }
-
-        public static void topView(Node root) {
-            // level order traversal is used to find the top view of the binary tree.
-            Queue<NodeInfo> q = new LinkedList<>();
-            HashMap<Integer, Node> map = new HashMap<>();
-            int min = 0, max = 0;
-            q.add(new NodeInfo(root, 0));
-            q.add((null));
-
-            while (!q.isEmpty()) {
-                NodeInfo curNode = q.remove();
-                if (curNode == null) {
-                    if (q.isEmpty()) {
-                        break;
-                    } else {
-                        q.add(null);
-                    }
-                } else {
-                    if (!map.containsKey(curNode.hd)) {
-                        map.put(curNode.hd, curNode.node);
-
-                    }
-
-                    if (curNode.node.left != null) {
-                        q.add(new NodeInfo(curNode.node.left, curNode.hd - 1));
-                        min = Math.min(min, curNode.hd - 1);
-                    }
-                    if (curNode.node.right != null) {
-                        q.add(new NodeInfo(curNode.node.right, curNode.hd + 1));
-                        max = Math.max(max, curNode.hd + 1);
-                    }
-                }
-            }
-
-            for (int i = min; i <= max; i++) {
-                if (map.containsKey(i)) {
-                    System.out.print(map.get(i).data + " ");
-                }
-            }
-            System.out.println();
-        }
-
-        public static void kthLevel(Node root, int level, int k) {
-            if (root == null) {
-                return;
-            }
-            if (level == k) {
-                System.out.print(root.data);
-                return;
-            }
-            kthLevel(root.left, level + 1, k);
-            kthLevel(root.right, level + 1, k);
-        }
-
-        public static boolean getPath(Node root, int n, ArrayList<Node> path) {
-            if (root == null) {
-                return false;
-            }
-            path.add(root);
-
-            if (root.data == n) {
-                return true;
-            }
-            boolean foundInLeft = getPath(root.left, n, path);
-            boolean foundInRight = getPath(root.right, n, path);
-
-            if (foundInLeft || foundInRight) {
-                return true;
-            }
-
-            path.remove(path.size() - 1);
+        if (!isIdentical(node.right, subRoot.right)) {
             return false;
         }
 
-        // lca first approach
-        public static Node lowestCommonAncestor(Node root, int n1, int n2) {
-            ArrayList<Node> path1 = new ArrayList<>();
-            ArrayList<Node> path2 = new ArrayList<>();
+        return true;
+    }
 
-            getPath(root, n1, path1);
-            getPath(root, n2, path2);
+    public static boolean isSubtree(Node root, Node subRoot) {
+        // step-1: find sub root in the main tree.
+        // step-2: recursively check the subtree is identical to each other or not.
 
-            int i = 0;
-            while (i < path1.size() && i < path2.size()) {
-                if (path1.get(i).data != path2.get(i).data) {
+        if (root == null) {
+            return false;
+        }
+        if (root.data == subRoot.data) {
+            if (isIdentical(root, subRoot)) {
+                return true;
+            }
+        }
+        boolean leftAns = isSubtree(root.left, subRoot);
+        boolean rightAns = isSubtree(root.right, subRoot);
+
+        return leftAns || rightAns;
+    }
+
+    static class NodeInfo {
+        Node node;
+        int hd;
+
+        NodeInfo(Node node, int hd) {
+            this.node = node;
+            this.hd = hd;
+        }
+    }
+
+    public static void topView(Node root) {
+        // level order traversal is used to find the top view of the binary tree.
+        Queue<NodeInfo> q = new LinkedList<>();
+        HashMap<Integer, Node> map = new HashMap<>();
+        int min = 0, max = 0;
+        q.add(new NodeInfo(root, 0));
+        q.add((null));
+
+        while (!q.isEmpty()) {
+            NodeInfo curNode = q.remove();
+            if (curNode == null) {
+                if (q.isEmpty()) {
                     break;
+                } else {
+                    q.add(null);
                 }
-                i++;
+            } else {
+                if (!map.containsKey(curNode.hd)) {
+                    map.put(curNode.hd, curNode.node);
+
+                }
+
+                if (curNode.node.left != null) {
+                    q.add(new NodeInfo(curNode.node.left, curNode.hd - 1));
+                    min = Math.min(min, curNode.hd - 1);
+                }
+                if (curNode.node.right != null) {
+                    q.add(new NodeInfo(curNode.node.right, curNode.hd + 1));
+                    max = Math.max(max, curNode.hd + 1);
+                }
             }
-
-            int lca = i - 1;
-
-            return path1.get(lca);
         }
 
-        // lca second and optimal approach.
-        public static Node lca2(Node root, int n1, int n2) {
-            if (root == null || root.data == n1 || root.data == n2) {
-                return root;
+        for (int i = min; i <= max; i++) {
+            if (map.containsKey(i)) {
+                System.out.print(map.get(i).data + " ");
             }
-            Node leftLca = lca2(root.left, n1, n2);
-            Node rightLca = lca2(root.right, n1, n2);
+        }
+        System.out.println();
+    }
 
-            if (rightLca == null) {
-                return leftLca;
-            }
-            if (leftLca == null) {
-                return rightLca;
-            }
+    public static void kthLevel(Node root, int level, int k) {
+        if (root == null) {
+            return;
+        }
+        if (level == k) {
+            System.out.print(root.data);
+            return;
+        }
+        kthLevel(root.left, level + 1, k);
+        kthLevel(root.right, level + 1, k);
+    }
 
+    public static boolean getPath(Node root, int n, ArrayList<Node> path) {
+        if (root == null) {
+            return false;
+        }
+        path.add(root);
+
+        if (root.data == n) {
+            return true;
+        }
+        boolean foundInLeft = getPath(root.left, n, path);
+        boolean foundInRight = getPath(root.right, n, path);
+
+        if (foundInLeft || foundInRight) {
+            return true;
+        }
+
+        path.remove(path.size() - 1);
+        return false;
+    }
+
+    // lca first approach
+    public static Node lowestCommonAncestor(Node root, int n1, int n2) {
+        ArrayList<Node> path1 = new ArrayList<>();
+        ArrayList<Node> path2 = new ArrayList<>();
+
+        getPath(root, n1, path1);
+        getPath(root, n2, path2);
+
+        int i = 0;
+        while (i < path1.size() && i < path2.size()) {
+            if (path1.get(i).data != path2.get(i).data) {
+                break;
+            }
+            i++;
+        }
+
+        int lca = i - 1;
+
+        return path1.get(lca);
+    }
+
+    // lca second and optimal approach.
+    public static Node lca2(Node root, int n1, int n2) {
+        if (root == null || root.data == n1 || root.data == n2) {
             return root;
+        }
+        Node leftLca = lca2(root.left, n1, n2);
+        Node rightLca = lca2(root.right, n1, n2);
 
+        if (rightLca == null) {
+            return leftLca;
+        }
+        if (leftLca == null) {
+            return rightLca;
         }
 
-        public static int lcaDist(Node root, int n) {
-            if (root == null) {
-                return -1;
-            }
-            if (root.data == n) {
-                return 0;
-            }
-            int leftDist = lcaDist(root.left, n);
-            int rightDist = lcaDist(root.right, n);
+        return root;
 
-            if (leftDist == -1 && rightDist == -1) {
-                return -1;
-            } else if (leftDist == -1) {
-                return rightDist + 1;
-            } else {
-                return leftDist + 1;
-            }
+    }
 
+    public static int lcaDist(Node root, int n) {
+        if (root == null) {
+            return -1;
+        }
+        if (root.data == n) {
+            return 0;
+        }
+        int leftDist = lcaDist(root.left, n);
+        int rightDist = lcaDist(root.right, n);
+
+        if (leftDist == -1 && rightDist == -1) {
+            return -1;
+        } else if (leftDist == -1) {
+            return rightDist + 1;
+        } else {
+            return leftDist + 1;
         }
 
-        public static int min_Distance(Node root, int n1, int n2) {
-            // minimum distance between two nodes :distance from lca from n1+distance from
-            // lca to n2
-            Node lca = lca2(root, n1, n2);
-            int dist1 = lcaDist(lca, n1);
-            int dist2 = lcaDist(lca, n2);
+    }
 
-            return dist1 + dist2;
+    public static int min_Distance(Node root, int n1, int n2) {
+        // minimum distance between two nodes :distance from lca from n1+distance from
+        // lca to n2
+        Node lca = lca2(root, n1, n2);
+        int dist1 = lcaDist(lca, n1);
+        int dist2 = lcaDist(lca, n2);
+
+        return dist1 + dist2;
+    }
+
+    // kth ancestor of a node in a binary tree.
+    public static int kthAncestor(Node root, int n, int k) {
+        if (root == null) {
+            return -1;
+        }
+        if (root.data == n) {
+            return 0;
         }
 
-        // kth ancestor of a node in a binary tree.
-        public static int kthAncestor(Node root, int n, int k) {
-            if (root == null) {
-                return -1;
-            }
-            if (root.data == n) {
-                return 0;
-            }
+        int leftDist = kthAncestor(root.left, n, k);
+        int rightDist = kthAncestor(root.right, n, k);
 
-            int leftDist = kthAncestor(root.left, n, k);
-            int rightDist = kthAncestor(root.right, n, k);
-
-            if (leftDist == -1 && rightDist == -1) {
-                return -1;
-            }
-            int max = Math.max(leftDist, rightDist);
-            if (max + 1 == k) {
-                System.out.println(root.data);
-            }
-            return max + 1;
+        if (leftDist == -1 && rightDist == -1) {
+            return -1;
         }
-
-        // transform to a sum tree,
-        public static int transformToSumTree(Node root) {
-            if (root == null) {
-                return 0;
-            }
-            int leftChild = transformToSumTree(root.left);
-            int rightChild = transformToSumTree(root.right);
-
-            int rootData = root.data;
-            root.data = ((root.left != null) ? root.left.data : 0) + leftChild
-                    + ((root.right != null) ? root.right.data : 0) + rightChild;
-            return rootData;
-
+        int max = Math.max(leftDist, rightDist);
+        if (max + 1 == k) {
+            System.out.println(root.data);
         }
+        return max + 1;
+    }
 
-        // print all path in the binary tree.
-        public static void printAllPath(Node root, ArrayList<Integer> path) {
-            if (root == null) {
-                return;
-            }
-            path.add(root.data);
-            if (root.left == null && root.right == null) {
-                System.out.println(path);
-            } else {
-                printAllPath(root.left, path);
-                printAllPath(root.right, path);
-            }
-            path.remove(path.size() - 1);
+    // transform to a sum tree,
+    public static int transformToSumTree(Node root) {
+        if (root == null) {
+            return 0;
         }
+        int leftChild = transformToSumTree(root.left);
+        int rightChild = transformToSumTree(root.right);
 
-        // leetcode style code print all path.
-        List<String> ans = new ArrayList<>();
+        int rootData = root.data;
+        root.data = ((root.left != null) ? root.left.data : 0) + leftChild
+                + ((root.right != null) ? root.right.data : 0) + rightChild;
+        return rootData;
 
-        public List<String> binaryTreePaths(Node root) {
-            path(root, "");
-            return ans;
+    }
+
+    // print all path in the binary tree.
+    public static void printAllPath(Node root, ArrayList<Integer> path) {
+        if (root == null) {
+            return;
         }
-
-        public void path(Node root, String str) {
-            if (root.left == null && root.right == null) {
-                ans.add(str + root.data);
-            }
-            if (root.left != null) {
-                path(root.left, str + root.data + "->");
-            }
-            if (root.right != null) {
-                path(root.right, str + root.data + "->");
-            }
+        path.add(root.data);
+        if (root.left == null && root.right == null) {
+            System.out.println(path);
+        } else {
+            printAllPath(root.left, path);
+            printAllPath(root.right, path);
         }
+        path.remove(path.size() - 1);
+    }
+
+    // leetcode style code print all path.
+    List<String> ans = new ArrayList<>();
+
+    public List<String> binaryTreePaths(Node root) {
+        path(root, "");
+        return ans;
+    }
+
+    public void path(Node root, String str) {
+        if (root.left == null && root.right == null) {
+            ans.add(str + root.data);
+        }
+        if (root.left != null) {
+            path(root.left, str + root.data + "->");
+        }
+        if (root.right != null) {
+            path(root.right, str + root.data + "->");
+        }
+    }
+
     }
 
     public static void main(String[] args) {

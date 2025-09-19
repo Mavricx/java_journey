@@ -1,4 +1,5 @@
 public class SearchRotatedArray {
+    //question is to search an element in a rotated and sorted array
     public static int search(int arr[], int si, int tar, int ei) {
         int mid = si + (ei - si) / 2;
         // case found on mid
