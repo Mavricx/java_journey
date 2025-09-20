@@ -496,7 +496,7 @@ public class Tree {
         }
     }
 
-    }
+    
 
     public static void main(String[] args) {
         // int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
@@ -539,7 +539,7 @@ public class Tree {
         // tree1.kthAncestor(root1, 5, 2);
         // tree1.preOrder(root1);
         // System.out.println(tree1.transformToSumTree(root1));
-        tree1.preOrder(root1);
-        tree1.printAllPath(root1, new ArrayList<>());
+        // tree1.preOrder(root1);
+        // tree1.printAllPath(root1, new ArrayList<>());
     }
 }

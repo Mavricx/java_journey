@@ -43,7 +43,11 @@ public class DFS {
         graph[6].add(new Edge(6, 5, 1));
 
     }
-
+    //approach 2 using recursion
+    //1st print the node
+    //2nd mark it visited
+    //3rd go to its unvisited neighbor and do step 1,2,3 for that neighbor
+    //4th if all neighbor are visited return
     public static void dfs(ArrayList<Edge>[] graph,int curr,boolean vis[]){ //time complexity O(V+E)
         System.out.print(curr+" ");
         vis[curr]=true;

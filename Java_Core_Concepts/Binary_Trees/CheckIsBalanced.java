@@ -1,3 +1,4 @@
+package Java_Core_Concepts.Binary_Trees;
 public class CheckIsBalanced {
     static class TreeNode {
         int val;

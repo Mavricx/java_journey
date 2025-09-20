@@ -46,6 +46,13 @@ public class BST {
 
     }
 
+    //approach 1 using queue
+    //1st add the source to the queue
+    //2nd remove the front element and mark it visited and print it
+    //3rd add all its unvisited neighbor to the queue
+    //4th repeat step 2 and 3 until queue is empty
+    //Note: in bfs all the neighbor at the current level is visited first before going to the next level
+    //bfs is used to find the shortest path in an unweighted graph
     public static void bfs(ArrayList<Edge> graph[]) {//time Complexity O(V+E)  **important** and O(V^2) if adjacency matrix is used.
         Queue<Integer> q = new LinkedList<>();
         boolean vis[] = new boolean[graph.length];

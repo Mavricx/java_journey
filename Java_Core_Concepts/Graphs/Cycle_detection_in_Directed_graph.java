@@ -29,7 +29,10 @@ public class Cycle_detection_in_Directed_graph {
         graph[2].add(new Edge(2, 3));
         graph[3].add(new Edge(3, 0));
     }
-
+    //modified dfs function to detect cycle in directed graph
+    //if a node is visited and is also in the current path(stack) then there is a cycle
+    //if a node is visited but not in the current path(stack) then there is no cycle
+    //if a node is not visited then visit it and do the same for its neighbor
     public static boolean isCyclic(ArrayList<Edge>[] graph) {
         boolean vis[] = new boolean[graph.length];
         boolean stack[] = new boolean[graph.length];
@@ -37,7 +40,6 @@ public class Cycle_detection_in_Directed_graph {
         for (int i = 0; i < graph.length; i++) {
             if (!vis[i]) {
                 if (isCycleUtil(graph, i, vis, stack))
-                    ;
                 return true;
             }
         }

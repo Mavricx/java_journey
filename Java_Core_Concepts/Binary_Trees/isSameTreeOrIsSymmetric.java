@@ -1,6 +1,6 @@
-
+package Java_Core_Concepts.Binary_Trees;
 //  Definition for a binary tree node.
-public class isSameTreeOrIsSymmetric {
+public class IsSameTreeOrIsSymmetric {
 
     static class TreeNode {
         int val;
