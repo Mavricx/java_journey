@@ -4,31 +4,31 @@
 3,Arrays,Contains Duplicate,LeetCode,https://leetcode.com/problems/contains-duplicate/,,Easy,Completed
 4,Arrays,Maximum Subarray (Kadane’s Algorithm),LeetCode,https://leetcode.com/problems/maximum-subarray/,,Medium,Completed
 5,Arrays,Product of Array Except Self,LeetCode,https://leetcode.com/problems/product-of-array-except-self/,,Medium,Completed
-6,Arrays,Merge Intervals,LeetCode,https://leetcode.com/problems/merge-intervals/,,Medium,Need One More Glance
-7,Arrays,3Sum,LeetCode,https://leetcode.com/problems/3sum/,,Medium,Need to Start
-8,Arrays,Set Matrix Zeroes,LeetCode,https://leetcode.com/problems/set-matrix-zeroes/,,Medium,Need to Start
-9,Arrays,Insert Interval,LeetCode,https://leetcode.com/problems/insert-interval/,,Medium,Need to Start
-10,Arrays,Subarray Sum Equals K,LeetCode,https://leetcode.com/problems/subarray-sum-equals-k/,,Medium,Need to Start
+6,Arrays,Merge Intervals,LeetCode,https://leetcode.com/problems/merge-intervals/,,Medium,Completed
+7,Arrays,3Sum,LeetCode,https://leetcode.com/problems/3sum/,,Medium,Completed
+8,Arrays,Set Matrix Zeroes,LeetCode,https://leetcode.com/problems/set-matrix-zeroes/,,Medium,Completed
+9,Arrays,Insert Interval,LeetCode,https://leetcode.com/problems/insert-interval/,,Medium,Completed
+10,Arrays,Subarray Sum Equals K,LeetCode,https://leetcode.com/problems/subarray-sum-equals-k/,,Medium,Completed
 11,Arrays,Find the Duplicate Number,LeetCode,https://leetcode.com/problems/find-the-duplicate-number/,,Medium,Completed
-12,Arrays,Maximum Product Subarray,LeetCode,https://leetcode.com/problems/maximum-product-subarray/,,Medium,Need to Start
-13,Strings,Valid Anagram,LeetCode,https://leetcode.com/problems/valid-anagram/,,Easy,Need to Start
-14,Strings,Group Anagrams,LeetCode,https://leetcode.com/problems/group-anagrams/,,Medium,Need to Start
-15,Strings,Longest Substring Without Repeating Characters,LeetCode,https://leetcode.com/problems/longest-substring-without-repeating-characters/,,Medium,Need to Start
-16,Strings,Longest Palindromic Substring,LeetCode,https://leetcode.com/problems/longest-palindromic-substring/,,Medium,Need to Start
-17,Strings,Valid Palindrome,LeetCode,https://leetcode.com/problems/valid-palindrome/,,Medium,Need to Start
-18,Strings,String to Integer (atoi),LeetCode,https://leetcode.com/problems/string-to-integer-atoi/,,Medium,Need to Start
-19,Strings,Implement strStr() (KMP/Rabin-Karp),LeetCode,https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/,,Medium,Need to Start
-20,Strings,Longest Repeating Character Replacement,LeetCode,https://leetcode.com/problems/longest-repeating-character-replacement/,,Medium,Need to Start
+12,Arrays,Maximum Product Subarray,LeetCode,https://leetcode.com/problems/maximum-product-subarray/,,Medium,Completed
+13,Strings,Valid Anagram,LeetCode,https://leetcode.com/problems/valid-anagram/,,Easy,Completed
+14,Strings,Group Anagrams,LeetCode,https://leetcode.com/problems/group-anagrams/,,Medium,Completed
+15,Strings,Longest Substring Without Repeating Characters,LeetCode,https://leetcode.com/problems/longest-substring-without-repeating-characters/,,Medium,Completed
+16,Strings,Longest Palindromic Substring,LeetCode,https://leetcode.com/problems/longest-palindromic-substring/,,Medium,Completed
+17,Strings,Valid Palindrome,LeetCode,https://leetcode.com/problems/valid-palindrome/,,Medium,Completed
+18,Strings,String to Integer (atoi),LeetCode,https://leetcode.com/problems/string-to-integer-atoi/,,Medium,Completed
+19,Strings,Implement strStr() (KMP/Rabin-Karp),LeetCode,https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/,,Medium,Completed
+20,Strings,Longest Repeating Character Replacement,LeetCode,https://leetcode.com/problems/longest-repeating-character-replacement/,,Medium,Completed
 21,Strings,Minimum Window Substring,LeetCode,https://leetcode.com/problems/minimum-window-substring/,,Hard,Need to Start
-22,Strings,Decode String,LeetCode,https://leetcode.com/problems/decode-string/,,Medium,Need to Start
-23,Strings,Valid Parentheses,LeetCode,https://leetcode.com/problems/valid-parentheses/,,Easy,Need to Start
-24,Strings,Roman to Integer,LeetCode,https://leetcode.com/problems/roman-to-integer/,,Medium,Need to Start
-25,Hash Maps & Sets,Two Sum (Hash Map),LeetCode,https://leetcode.com/problems/two-sum/,,Easy,Need to Start
-26,Hash Maps & Sets,Valid Anagram,LeetCode,https://leetcode.com/problems/valid-anagram/,,Easy,Need to Start
-27,Hash Maps & Sets,Isomorphic Strings,LeetCode,https://leetcode.com/problems/isomorphic-strings/,,Medium,Need to Start
+22,Strings,Decode String,LeetCode,https://leetcode.com/problems/decode-string/,,Medium,Completed
+23,Strings,Valid Parentheses,LeetCode,https://leetcode.com/problems/valid-parentheses/,,Easy,Completed
+24,Strings,Roman to Integer,LeetCode,https://leetcode.com/problems/roman-to-integer/,,Medium,Completed
+25,Hash Maps & Sets,Two Sum (Hash Map),LeetCode,https://leetcode.com/problems/two-sum/,,Easy,Completed
+26,Hash Maps & Sets,Valid Anagram,LeetCode,https://leetcode.com/problems/valid-anagram/,,Easy,Completed
+27,Hash Maps & Sets,Isomorphic Strings,LeetCode,https://leetcode.com/problems/isomorphic-strings/,,Medium,Completed
 28,Hash Maps & Sets,Word Pattern,LeetCode,https://leetcode.com/problems/word-pattern/,,Medium,Need to Start
-29,Hash Maps & Sets,Group Anagrams,LeetCode,https://leetcode.com/problems/group-anagrams/,,Medium,Need to Start
-30,Hash Maps & Sets,Longest Consecutive Sequence,LeetCode,https://leetcode.com/problems/longest-consecutive-sequence/,,Medium,Need to Start
+29,Hash Maps & Sets,Group Anagrams,LeetCode,https://leetcode.com/problems/group-anagrams/,,Medium,Completed
+30,Hash Maps & Sets,Longest Consecutive Sequence,LeetCode,https://leetcode.com/problems/longest-consecutive-sequence/,,Medium,Completed
 31,Hash Maps & Sets,Ransom Note,LeetCode,https://leetcode.com/problems/ransom-note/,,Medium,Need to Start
 32,Hash Maps & Sets,Happy Number,LeetCode,https://leetcode.com/problems/happy-number/,,Medium,Need to Start
 33,Hash Maps & Sets,Subarray Sum Equals K,LeetCode,https://leetcode.com/problems/subarray-sum-equals-k/,,Medium,Need to Start
