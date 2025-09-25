@@ -8,8 +8,8 @@ public class Divide_two_Integers {
         }
         boolean sign = (dividend < 0) ^ (divisor < 0);
 
-        long a = (long) (Math.abs(dividend));
-        long b = (long) (Math.abs(divisor));
+        long a =  Math.abs((long)dividend);
+        long b =  Math.abs((long)divisor);
         int result = 0;
 
         while (a >= b) {
