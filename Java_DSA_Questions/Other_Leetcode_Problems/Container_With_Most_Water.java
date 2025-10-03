@@ -1,4 +1,4 @@
-package Java_DSA_Questions.Other_Problems;
+package Java_DSA_Questions.Other_Leetcode_Problems;
 
 //Answer to the  question https://leetcode.com/problems/container-with-most-water/
 class Container_With_Most_Water {

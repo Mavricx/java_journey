@@ -1,4 +1,4 @@
-package Java_DSA_Questions.Other_Problems;
+package Java_DSA_Questions.Other_Leetcode_Problems;
 
 public class Jump_Game_II {
     public static int jump(int [] arr){

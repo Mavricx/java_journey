@@ -1,4 +1,4 @@
-package Java_DSA_Questions.Other_Problems;
+package Java_DSA_Questions.Other_Leetcode_Problems;
 public class Second_largest_digit_in_string {
     public int secondHighest(String s) {
         int len=s.length(); 

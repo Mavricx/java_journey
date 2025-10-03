@@ -1,4 +1,4 @@
-package Java_DSA_Questions.Other_Problems;
+package Java_DSA_Questions.Other_Leetcode_Problems;
 import java.util.*;
 public class Insert_Intervals {
     public int[][] insert(int[][] intervals, int[] newInterval) {

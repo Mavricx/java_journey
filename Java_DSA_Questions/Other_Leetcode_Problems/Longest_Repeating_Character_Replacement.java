@@ -1,4 +1,4 @@
-package Java_DSA_Questions.Other_Problems;
+package Java_DSA_Questions.Other_Leetcode_Problems;
 public class Longest_Repeating_Character_Replacement {
     public static int characterReplacement(String s, int k) {
       int [] freq=new int[26];

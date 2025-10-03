@@ -1,4 +1,4 @@
-package Java_DSA_Questions.Other_Problems;
+package Java_DSA_Questions.Other_Leetcode_Problems;
 import java.util.*;
 public class Pascals_Triangle {
     public static List<List<Integer>> pascalTriangle(int numRows){

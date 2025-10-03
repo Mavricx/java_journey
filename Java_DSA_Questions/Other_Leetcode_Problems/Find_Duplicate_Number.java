@@ -1,4 +1,4 @@
-package Java_DSA_Questions.Other_Problems;
+package Java_DSA_Questions.Other_Leetcode_Problems;
 
 public class Find_Duplicate_Number {
     // Given an array of integers nums containing n + 1 integers where each integer

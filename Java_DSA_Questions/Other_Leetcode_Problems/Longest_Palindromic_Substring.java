@@ -1,4 +1,4 @@
-package Java_DSA_Questions.Other_Problems;
+package Java_DSA_Questions.Other_Leetcode_Problems;
 
 public class Longest_Palindromic_Substring {
     //this algorithm is called "Manacher's Algorithm"
