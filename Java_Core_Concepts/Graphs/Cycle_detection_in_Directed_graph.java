@@ -56,7 +56,7 @@ public class Cycle_detection_in_Directed_graph {
             }
             if (!vis[e.dest]) {
                 if (isCycleUtil(graph, e.dest, vis, stack)) {
-                    return false;
+                    return true;
                 }
             }
         }
