@@ -1,3 +1,5 @@
+package Java_Core_Concepts.Graphs;
+
 import java.util.*;
 
 public class Bipartite_coloring {
