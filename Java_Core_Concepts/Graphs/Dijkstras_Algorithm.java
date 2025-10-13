@@ -6,6 +6,8 @@ import java.util.*;
 public class Dijkstras_Algorithm {
     // Goal: find the shortest path from source to all other vertices
     // works only for positive weights
+    //time complexity: O(E log V) , E=edges, V=vertices
+    
     static class Edge {
         int src;
         int dest;

@@ -65,3 +65,10 @@
 (u, v) either connects a vertex from U to V or a vertex from V to U. In other words, for every edge (u, v), either u
 belongs to U and v to V, or u belongs to V and v to U. We can also say that there is no edge that connects vertices of
 same set.
+
+# Minimum Spanning Tree(MST)
+A minimum spanning tree (MST) or minimum weight spanning tree is a subset of the edges of a connected, edge-weighted undirected graph that connects all the vertices together, without any cycles and with the minimum possible total edge weight.
+ ## Conditions to be MST
+  1. No Cycles should be present
+  2. All vertices should be Connected.
+  3. Minimum possible total edge weight.
